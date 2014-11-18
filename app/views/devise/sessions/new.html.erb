@@ -1,0 +1,46 @@
+<div class="sign-in-reg">  
+  <div class="container form">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="form-header logo-inverse">
+          <a href="/">Leema</a>
+        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'well'}) do |f| %>
+        <fieldset>
+          <legend>
+            <h2>Log in</h2>
+          </legend>
+          <div class="form-group">
+            <div><%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control input_wide' %></div>
+          </div>
+          <div class="form-group">
+            <div><%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control input_wide' %></div>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+
+            <div class="checkbox">
+              <label>
+                <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+              </label>
+            </div>
+          <% end -%>
+
+          <div><%= f.submit "Log in", :class => "btn btn-primary" %></div>
+
+          <div class="text-center">
+            <%= render "devise/shared/links" %>
+            <hr>
+            <a class="btn btn-block btn-social btn-facebook">
+              <i class="fa fa-facebook"></i> Sign in with Facebook
+            </a>
+          </div>
+        </fieldset>
+
+        <% end %>
+      </div><!-- close col -->
+    </div><!-- close row -->
+  </div><!-- close container -->
+</div>

@@ -1,0 +1,62 @@
+@import "twitter/bootstrap/bootstrap";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: font-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: font-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: font-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: font-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: font-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/glyphicons.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @link-color: #ff0000;
+
+// Fonts
+@font-family-serif: 'lavanderia_regular', Georgia, "Times New Roman", Times, serif;
+
+// Nav Overrides
+@navbar-height: 100px;
+@navbar-default-bg: transparent;
+@navbar-default-brand-color: #ed009c;
+@navbar-margin-bottom: 0px;
+@brand-primary: #ed009c;
+.navbar {
+	z-index: 1000;
+}
+.navbar-brand {
+	font-family: @font-family-serif;
+	font-size: 40px;
+	line-height: 23px;
+}
+
+.logo {
+	color: @navbar-default-brand-color;
+	font-family: @font-family-serif;
+}
+
+.logo-inverse {
+	color: #fff;
+	font-family: @font-family-serif;
+}
+
+@media (max-width: 767px) {
+
+}
+
