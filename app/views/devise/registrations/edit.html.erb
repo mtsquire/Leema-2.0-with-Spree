@@ -19,6 +19,9 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
+  <%= f.label :about_me %><br>
+  <%= f.text_area :about, placeholder: "Tell us about yourself." %>
+
   <div><%= f.submit "Update" %></div>
 <% end %>
 

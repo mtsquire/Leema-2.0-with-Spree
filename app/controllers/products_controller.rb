@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
     layout "products"
     before_action :authenticate_user!
+    respond_to :html, :json
 
     def new
       @product = current_user.products.new
@@ -41,22 +42,6 @@ class ProductsController < ApplicationController
         redirect_to @product
       else
         render 'edit'
-      end
-    end
-
-    def update
-      @product = Product.find(params[:id])
-      if params[:product] && params[:product].has_key?(:user_id)
-        params[:product].delete(:user_id) 
-      end
-      respond_to do |format|
-        if @product.update_attributes(product_params)
-          format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-          format.json { render :index, product: :ok, location: @product }
-        else
-          format.html { render :edit }
-          format.json { render json: @product.errors, product: :unprocessable_entity }
-        end
       end
     end
 

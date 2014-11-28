@@ -6,15 +6,15 @@
         <%= image_tag @user.gravatar_url, class: 'center-block img-circle img-thumbnail img-responsive' %>
         
         <ul class="list-group">
-          <li class="list-group-item text-muted">Brandon Hay</li>
+          <li class="list-group-item text-muted"><%= @user.full_name %></li>
           <li class="list-group-item text-right"><%= @user.created_at.strftime('%B %e, %Y') %>
             <span class="pull-left">
               <strong>Joined</strong>
             </span>
           </li>
-          <li class="list-group-item text-right"><%= time_ago_in_words(@user.last_sign_in_at) %> ago
+          <li class="list-group-item text-right">Somewhere, USA
             <span class="pull-left">
-              <strong>Last seen</strong>
+              <strong>Location</strong>
             </span>
           </li>
           <li class="list-group-item text-right"><%= @user.products.count %>
@@ -33,14 +33,17 @@
       <div class="clearfix visible-xs"></div>
       <!-- Start Right Side -->
       <div class="col-xs-12 col-sm-9">
+        <!-- Start About Me -->
         <div class="row">
           <div class="col-xs-12 col-sm-12">
-            <!-- Start About Me -->
             <h2>About <%= @user.first_name %>:</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula lobortis felis, eget porta augue consequat et. Aliquam arcu nisi, imperdiet et consequat tincidunt, consectetur a diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis dictum libero libero, eget placerat diam porttitor molestie. Duis fermentum elementum augue, at fermentum leo rutrum vel. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis ut diam lorem. Sed elementum orci ac porta tempus. Nunc consectetur velit quis ornare elementum. In adipiscing tellus sit amet enim rhoncus dictum. Nunc in sapien in nunc facilisis pretium. Cras pretium tempus sem. Nunc imperdiet magna tellus.</p>
+            <div class="text-area"><%= @user.about %></div>
+            <% if @user == current_user %>
+            <%= link_to "Edit", edit_path(@user) %>
+            <% end %>
           </div>
         </div>
-            <!-- End About Me -->
+        <!-- End About Me -->
 
             <!-- Start Latest Projects -->
             <h2>Products</h2>
@@ -61,7 +64,7 @@
                                     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                                     :class => 'btn btn-xs btn-danger' %></p>
                       <% else %>
-                        <p><%= product.description %></p>
+                        <p><em><%= humanized_money_with_symbol product.price %></em></p>
                         <p><%= link_to "Add to cart", product_path(product), class: 'btn btn-primary' %></p>
                       <% end %>
                     </div>

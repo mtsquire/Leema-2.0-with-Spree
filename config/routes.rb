@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get 'register', to: 'devise/registrations#new', as: :register
     get 'signin', to: 'devise/sessions#new', as: :signin
     get 'logout', to: 'devise/sessions#destroy', as: :logout
+    get 'edit', to: 'devise/registrations#edit', as: :edit
+    put "update" => 'devise/registrations#update', as: :updateprofile
   end
   
   resources :products do

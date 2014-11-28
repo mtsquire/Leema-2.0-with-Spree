@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -30,6 +29,7 @@ gem 'spring',        group: :development
 gem 'omniauth-facebook'
 # Used as currency fields
 gem 'money-rails'
+
 group :development do
   gem 'xray-rails'
 end
