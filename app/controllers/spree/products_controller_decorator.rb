@@ -1,5 +1,5 @@
-class ProductsController < Spree::ProductsController
-    layout "products"
+Spree::ProductsController.class_eval do
+  layout "products"
     before_action :authenticate_user!
     respond_to :html, :json
 
@@ -20,15 +20,6 @@ class ProductsController < Spree::ProductsController
         end
       end
 
-    end
-
-    def show
-      @product = Product.find(params[:id])
-      @user = @product.user
-    end
-
-    def index
-      @products = Product.all
     end
 
     def edit
@@ -57,4 +48,4 @@ class ProductsController < Spree::ProductsController
         params.require(:product).permit(:user_id, :title, :price, :description, :photo)
       end
 
-  end
+end

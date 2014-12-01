@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
 	layout "home"
   def index
-    @products = Product.all
+    @products = Spree::Product.all
+    @images = Spree::Image.all
   end
 end
