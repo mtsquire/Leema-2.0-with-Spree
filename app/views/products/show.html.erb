@@ -1,9 +1,9 @@
 <div class="container">
   <div class="col-md-6">
     <h1>
-    <%= @product.title %>
+    <%= @product.name %>
     </h1>
-    <%= image_tag @product.photo.url %>
+    <%= image_tag @product.images.first.attachment.url %>
     <p>
       <strong>Price:</strong>
       <%= humanized_money_with_symbol @product.price %>
@@ -14,7 +14,6 @@
     </p>
   <!-- Comments List -->
     <ol class="comment-list media-list">
-    <% @product.comments.each do |comment| %>
       <li id="comment-3" class="comment even thread-even depth-1 parent">
       <article id="div-comment-3" class="comment-body media">
       <a class="pull-left" href="#">
@@ -27,19 +26,11 @@
               <a href="/<%= @user.id %>"><span class="author publisher-anchor-color"><%= @user.full_name %></span></a>
             </span>
             <span class="post-meta">
-              <em><%= time_ago_in_words(comment.created_at)%> ago</em>
             </span>
           </header> 
           <div class="comment-content">
-            <p><%= comment.body %></p>
-            <% if current_user == @user %>
         <p>
-          <%= link_to 'Delete Comment', [comment.product, comment],
-                       method: :delete,
-                       data: { confirm: 'Are you sure?' } %>
-                  
         </p>
-      <% end %>
           </div><!-- .comment-content -->                    
         </div>
 
@@ -48,11 +39,9 @@
       </article><!-- .comment-body -->
 
       </li>
-    <% end %>
     </ol>
 
     <h4>Add a comment:</h4>
-    <%= render 'comments/form' %>
 
     <!--Rating system
     <% form_id = "product_#{@product.id}_rating" %>

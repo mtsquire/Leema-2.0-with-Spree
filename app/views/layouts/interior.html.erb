@@ -57,7 +57,6 @@
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
           <li><%= link_to "Browse", products_path %></li>
-          <li><%= link_to "New Product", new_product_path %></li>
           <li><%= link_to "Log Out", logout_path %></li>
         <% else %>
           <li><%= link_to "Log In", signin_path %></a></li>

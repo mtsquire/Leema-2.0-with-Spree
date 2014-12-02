@@ -63,7 +63,7 @@
             <a href="/<%= current_user.id %>"><%= current_user.first_name %></a>
           </li>
           <li><%= link_to "Browse", products_path %></li>
-          <li><%= link_to "New Product", "#" %></li>
+          <li><%= link_to "New Product", new_admin_product_path %></li>
           <li><%= link_to "Log Out", spree_logout_path %></li>
         <% else %>
           <li><%= link_to "Log In", spree_signin_path %></a></li>

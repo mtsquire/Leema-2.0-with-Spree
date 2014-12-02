@@ -53,7 +53,7 @@
                   <div class="thumbnail">
                     <%= link_to image_tag(product.photo.url), controller: 'products', action: 'show', id: product %>
                     <div class="caption">
-                      <h3><%= product.title %></h3>
+                      <h3><%= product.name %></h3>
                       <% if current_user == product.user %>
                         <p><em>You posted this product <%= time_ago_in_words(product.created_at) %> ago.</em></p>
                         <p><%= link_to t('.edit', :default => t("helpers.links.edit")),
