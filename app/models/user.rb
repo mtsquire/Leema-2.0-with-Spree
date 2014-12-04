@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
 
   has_many :products, dependent: :destroy
   #Spree products integration
-  has_many :spree_products, :class_name => 'Spree::Product'
   has_many :ratings
   has_many :comments, dependent: :destroy
 
