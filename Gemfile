@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 gem 'devise', '3.2.3'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Changed the database to postgres to work with Heroku
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -52,3 +52,10 @@ gem "twitter-bootstrap-rails"
 gem 'spree', '2.3.4'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-3-stable'
 gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-3-stable'
+
+#For Heroku deployment
+gem 'rails_12factor', group: :production
+ruby "2.1.2"
+
+
+
