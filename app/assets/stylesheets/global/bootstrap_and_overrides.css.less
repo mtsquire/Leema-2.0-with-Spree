@@ -56,6 +56,7 @@
 	font-family: @font-family-serif;
 }
 
+
 /* Profile Page Section Covers */
 .section-cover{
 	position: relative;
@@ -70,10 +71,18 @@
 	display: block;
 }
 
-.profile-image img {
-	width: 175px;
-	height: 175px;
+.profile-image {
 	margin-top: -127px;
+
+		img {
+			width: 175px;
+			height: 175px;
+		}
+
+		.img-thumbnail {
+			background-color: @brand-primary;
+			padding: 2px;
+		}
 }
 
 .about-user {
