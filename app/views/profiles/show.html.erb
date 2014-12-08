@@ -4,7 +4,7 @@
       <!-- Start Left Side -->
       <div class="col-xs-12 col-sm-3 text-center">
         <%= image_tag @user.gravatar_url, class: 'center-block img-circle img-thumbnail img-responsive' %>
-        
+
         <ul class="list-group">
           <li class="list-group-item text-muted"><%= @user.full_name %></li>
           <li class="list-group-item text-right"><%= @user.created_at.strftime('%B %e, %Y') %>
@@ -20,11 +20,6 @@
           <li class="list-group-item text-right"><%= @user.products.count %>
             <span class="pull-left">
               <strong>Products</strong>
-            </span>
-          </li>
-          <li class="list-group-item text-right"><%= @user.comments.count %>
-            <span class="pull-left">
-              <strong>Comments</strong>
             </span>
           </li>
         </ul>

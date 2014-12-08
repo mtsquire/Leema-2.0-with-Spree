@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 20141207022324) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.decimal  "avg_rating",         precision: 7, scale: 5, default: 0.0, null: false
-    t.integer  "reviews_count",                              default: 0,   null: false
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"
@@ -883,15 +881,11 @@ ActiveRecord::Schema.define(version: 20141207022324) do
     t.string   "authentication_token"
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "spree_api_key",          limit: 48
-    t.datetime "remember_created_at"
   end
-
-  add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
-  add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                      default: "",    null: false
