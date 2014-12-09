@@ -24,12 +24,18 @@
 //
 // If you'd like to override bootstrap's own variables, you can do so here as well
 // See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-@link-color: #333232;
+
+
 
 // Fonts
 @font-family-serif: 'lavanderia_regular', Georgia, "Times New Roman", Times, serif;
+
+@text-color: #6c6f70;
+@link-color: #212121;
+@link-hover-color: darken(@link-color, 15%);
+@link-hover-decoration: none;
+
+@headings-color:#212121;
 
 // Nav Overrides
 @navbar-height: 100px;
@@ -37,6 +43,10 @@
 @navbar-default-brand-color: #E91E63;
 @navbar-margin-bottom: 0px;
 @brand-primary: #E91E63;
+
+
+
+
 .navbar {
 	z-index: 1000;
 }
