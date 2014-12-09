@@ -26,7 +26,7 @@
 // See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
 //
 // Example:
-// @link-color: #ff0000;
+@link-color: #333232;
 
 // Fonts
 @font-family-serif: 'lavanderia_regular', Georgia, "Times New Roman", Times, serif;
@@ -34,9 +34,9 @@
 // Nav Overrides
 @navbar-height: 100px;
 @navbar-default-bg: transparent;
-@navbar-default-brand-color: #ed009c;
+@navbar-default-brand-color: #E91E63;
 @navbar-margin-bottom: 0px;
-@brand-primary: #ed009c;
+@brand-primary: #E91E63;
 .navbar {
 	z-index: 1000;
 }
@@ -44,11 +44,17 @@
 	font-family: @font-family-serif;
 	font-size: 40px;
 	line-height: 23px;
+	color: @navbar-default-brand-color;
 }
 
 .logo {
-	color: @navbar-default-brand-color;
+	color: @navbar-default-brand-color !important;
 	font-family: @font-family-serif;
+}
+
+.logo:hover {
+	color:darken(@navbar-default-brand-color, 5%) !important;
+	text-decoration: none;
 }
 
 .logo-inverse {
