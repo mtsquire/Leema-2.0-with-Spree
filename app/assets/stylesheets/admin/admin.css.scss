@@ -2,3 +2,31 @@
 fieldset .filter-actions {
 	margin-bottom: 32px;
 }
+
+#admin-menu ul {
+	margin-bottom: 0px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+table th.actions [class*='fa-'].no-text, table td.actions [class*='fa-'].no-text {
+	height: 30px;
+	width: 30px;
+	padding-top: 7px;
+	padding-left: 3px;
+}
+
+#content-header {
+	border-bottom: none;
+}
+
+#content-header h1 {
+	margin-top: 10px;
+}
+
+#sidebar .sidebar-title > span {
+	top: -18px;
+}
