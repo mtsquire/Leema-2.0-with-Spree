@@ -38,7 +38,7 @@ function doneResizing() {
             var d = c + "px", e = $(".navbar").outerHeight();
             $(".masthead").each(function() {
                 $(this).css("height", d).css("margin-top", -e).css("padding-top", e), absTopThirdVertical(), $(this).css("visibility", "visible").css("opacity", "1");
-                
+
                 // Reposition search bar in center of masthead
                 searchMargin = $('.masthead').height() / 2;
                 searchHeight = $('.search-leema').height() / 2;
@@ -47,7 +47,7 @@ function doneResizing() {
         } else {
             $(".masthead").css("height", "").css("margin-top", "").css("padding-top", "").css("visibility", "visible").css("opacity", "1"), $(".abs-topthird").css("margin-top", "");
             viewPortHeight = c, viewPortWidth = b;
-            
+
             // Reposition search bar in center of masthead
             searchMargin = $('.masthead').height() / 2;
             searchHeight = $('.search-leema').height() / 2;
@@ -79,5 +79,6 @@ $(document).ready(function() {
         var e = a.offset().top, f = a.outerHeight(), g = e - viewPortHeight + c, h = e + f;
         b >= g && h >= b && d(g, h)
     };
+
 
 });
