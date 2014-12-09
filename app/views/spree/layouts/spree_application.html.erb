@@ -15,10 +15,10 @@
       <div id="wrapper" class="row" data-hook>
 
         <%= breadcrumbs(@taxon) %>
-        <div class="col-md-3" id="sidebar">
-          <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
-        </div>
-        <div id="content" class="col-md-9 <%= !content_for?(:sidebar) ? "sixteen" : "twelve omega" %>" data-hook>
+
+        <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
+
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-xs-12" : "col-md-9 omega" %>" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>
