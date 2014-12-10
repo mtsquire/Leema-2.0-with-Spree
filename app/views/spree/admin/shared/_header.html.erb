@@ -1,9 +1,8 @@
 <header id="header" data-hook>
-  <div class="container">
-    <figure data-hook="logo-wrapper" class="columns five">
-      <%= link_to image_tag(Spree::Config[:admin_interface_logo], :id => 'logo'), spree.admin_path %>
-    </figure>
-
-    <nav data-hook="admin_login_navigation_bar" class="columns eleven"></nav>
-  </div>
+	<nav class="navbar navbar-default navbar-seller" role="navigation">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <div data-hook><%= link_to "Leema", spree.admin_path, class: 'navbar-brand' %></div>
+	    </div>
+	</nav>
 </header>
