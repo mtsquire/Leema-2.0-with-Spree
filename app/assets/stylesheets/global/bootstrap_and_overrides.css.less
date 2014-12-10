@@ -25,27 +25,38 @@
 // If you'd like to override bootstrap's own variables, you can do so here as well
 // See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
 
-
+@body-bg: #f8f8f8;
 
 // Fonts
 @font-family-serif: 'lavanderia_regular', Georgia, "Times New Roman", Times, serif;
 
 @text-color: #6c6f70;
+@headings-color: #424242;
 @link-color: #212121;
 @link-hover-color: #E91E63;
-@link-hover-decoration: none;
+@link-hover-decoration: none !important;
 
 @headings-color:#424242;
 
 // Nav Overrides
 @navbar-height: 100px;
-@navbar-default-bg: transparent;
+@navbar-default-bg: #ffffff;
 @navbar-default-brand-color: #E91E63;
 @navbar-margin-bottom: 0px;
 @brand-primary: #E91E63;
+@navbar-default-border: none;
 
+p {
+	padding: 0px;
+}
 
+a:hover {
+	text-decoration: @link-hover-decoration;
 
+	h1, h2, h3, h4, h5 {
+		color: @link-hover-color;
+	}
+}
 
 .navbar {
 	z-index: 1000;
@@ -70,6 +81,14 @@
 .logo-inverse {
 	color: #fff;
 	font-family: @font-family-serif;
+}
+
+#default .container, #product-details .container {
+	padding-top: 30px;
+}
+
+#taxonomies h4 {
+	margin: 0px 0 10px;
 }
 
 
@@ -140,3 +159,48 @@
 
 }
 
+
+/* Products */
+.product-link {
+	display: block;
+}
+
+.product-description {
+	color: @text-color;
+}
+
+.product-price {
+	color: @text-color;
+	cursor: pointer;
+}
+
+.product-card {
+	margin-bottom: 30px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.product-link:hover {
+
+	.product-card {
+		border-bottom: 1px solid @link-hover-color;
+	}
+
+	.product-description {
+		cursor: pointer;
+		color: @text-color;
+	}
+
+	.product-price {
+		cursor: pointer;
+		color: @link-color;
+	}
+}
+
+.product-info {
+	background: #fff;
+	padding: @grid-gutter-width;
+}
+
+.product-info h3 {
+	margin-top: 0px;
+}
