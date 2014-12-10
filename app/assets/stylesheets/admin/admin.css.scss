@@ -27,3 +27,11 @@ table th.actions [class*='fa-'].no-text, table td.actions [class*='fa-'].no-text
 	display: block;
 	text-align: left;
 }
+
+fieldset .filter-actions button, fieldset .filter-actions .button, fieldset .filter-actions input[type="submit"], fieldset .filter-actions input[type="button"], fieldset .filter-actions span.or {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+	-moz-box-shadow: none;
+}
