@@ -57,7 +57,7 @@ gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '2-3-stable'
 #For Heroku deployment
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
-ruby "2.1.3"
+ruby "2.1.2"
 
 
 

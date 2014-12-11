@@ -1,7 +1,10 @@
 <body>
   <div class="section-cover">
-    <img class="section-cover-image img-responsive" src="http://placehold.it/2000x580">
-
+    <% if @user.cover_photo_file_name? %>
+      <%= image_tag @user.cover_photo.url(:large), class: "section-cover-image img-responsive" %>
+    <% else %>
+      <img class="section-cover-image img-responsive" src="http://placehold.it/2000x580">
+    <% end %>
   </div>
   <div class="container">
     <div class="row">
