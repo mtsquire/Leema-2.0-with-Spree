@@ -20,7 +20,7 @@
         <h3><%= @user.full_name %></h3>
         <p class="text-muted"><i class="fa fa-map-marker"></i>  <%= @user.city %>, <%= @user.state %></p>
         <p class="text-muted"><i class="fa fa-clock-o"></i> Joined <%= @user.created_at.strftime('%B %Y') %></p>
-        <p class="text-muted"><%= @user.products.count %> Products Listed</p>
+        <p class="text-muted">No Products Listed</p>
       </div>
 
       <div class="col-sm-8">
