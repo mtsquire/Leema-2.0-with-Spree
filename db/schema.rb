@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210234924) do
+ActiveRecord::Schema.define(version: 20141211224120) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -436,6 +436,7 @@ ActiveRecord::Schema.define(version: 20141210234924) do
     t.datetime "updated_at"
     t.decimal  "avg_rating",           precision: 7, scale: 5, default: 0.0, null: false
     t.integer  "reviews_count",                                default: 0,   null: false
+    t.integer  "user_id"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -445,6 +446,7 @@ ActiveRecord::Schema.define(version: 20141210234924) do
   add_index "spree_products", ["slug"], name: "index_spree_products_on_slug"
   add_index "spree_products", ["slug"], name: "permalink_idx_unique", unique: true
   add_index "spree_products", ["tax_category_id"], name: "index_spree_products_on_tax_category_id"
+  add_index "spree_products", ["user_id"], name: "index_spree_products_on_user_id"
 
   create_table "spree_products_promotion_rules", id: false, force: true do |t|
     t.integer "product_id"

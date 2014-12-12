@@ -1,0 +1,29 @@
+<div class="review" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
+  <span>
+    <%= image_tag review.user.gravatar_url, class: 'left-block img-thumbnail img-responsive' %>
+  </span><br>
+  <span class="reviews-rating" title="<%= txt_stars(review.rating) %>">
+    <%= render "spree/reviews/stars", :stars => review.rating %>
+  </span>
+
+  <span itemprop="name"><%= review.title %></span>
+  <br/>
+
+  <span class="attribution"><%= Spree.t(:Posted) %> <strong><%= time_ago_in_words(l review.created_at) %> ago</strong> by</span>
+  <meta itemprop="datePublished" content="<%= review.created_at.to_date.to_s %>" />
+
+  <meta itemprop="reviewRating" content="<%= review.rating %>" />
+  <% if Spree::Reviews::Config[:show_email] && review.user %>
+    <span itemprop="author"><%= review.user.email %></span>
+  <% else %>
+    <span itemprop="author"><a href="/<%= current_user.id %>"><%= review.user.full_name%></a></span>
+  <% end %>
+  <div itemprop="reviewBody">
+    <%= simple_format(review.review) %>
+  </div>
+  <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
+    <div class="feedback_review" id="feedback_review_<%= review.id %>">
+      <%= render "spree/feedback_reviews/form", :review => review %>
+    </div>
+  <% end %>
+</div>

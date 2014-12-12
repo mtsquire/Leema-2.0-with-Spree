@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
     else
       render file: 'public/404', status: 404, format: [:html]
     end
+
   end
 
 end
