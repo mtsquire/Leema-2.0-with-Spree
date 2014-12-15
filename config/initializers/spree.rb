@@ -9,11 +9,35 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  #config.use_s3 = true
-  #config.s3_bucket = 'brandonhay.aws.bucket'
-  #config.s3_access_key = "AKIAIVPZCTPOKL3FT3XA"
-  # config.s3_secret = "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"
-end
+  attachment_config = {
+    if Rails.env.production?
+      s3_credentials: {
+        access_key_id: "AWS_ACCESS_KEY_ID",
+        secret_access_key: "AWS_SECRET_ACCESS_KEY",
+        bucket: "S3_BUCKET_NAME",
+      },
+   
+      storage:        :s3,
+      s3_headers:     { "Cache-Control" => "max-age=31557600" },
+      s3_protocol:    "https",
+      bucket:         "S3_BUCKET_NAME",
+   
+      styles: {
+        mini:     "48x48>",
+        small:    "100x100>",
+        product:  "240x240>",
+        large:    "600x600>"
+      },
+   
+      path:          ":rails_root/public/spree/products/:id/:style/:basename.:extension",
+      default_url:   "/spree/products/:id/:style/:basename.:extension",
+      default_style: "product",
+    }
+   
+    attachment_config.each do |key, value|
+      Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
+    end
+  end
 
 Spree.user_class = "User"
 
