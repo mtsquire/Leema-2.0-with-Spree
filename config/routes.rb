@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'ratings/create'
   get 'ratings/update'
 # Need to adjust this for FB authentication
-  devise_for :users, :controllers => { :registrations => "registrations" }
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   devise_scope :user do
     get 'register', to: 'devise/registrations#new', as: :register
