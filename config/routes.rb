@@ -25,11 +25,21 @@ Rails.application.routes.draw do
     match 'auth/failure', to: redirect('/'), via: [:get, :post]
   end
   
+  resources :products do
+    resources :comments
+  end
+  resources :ratings
+  
   get 'welcome/index'
 
   get '/:id', to: 'profiles#show'
 
   root 'welcome#index'
+
+  # Logging in with Facebook #
+  # match 'auth/:provider/callback', to: 'sessions#create'
+  # match 'auth/failure', to: redirect('/')
+  # match 'signout', to: 'sessions#destroy', as: 'signout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
