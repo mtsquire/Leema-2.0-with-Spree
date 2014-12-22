@@ -16,7 +16,7 @@
   <% if Spree::Reviews::Config[:show_email] && review.user %>
     <span itemprop="author"><%= review.user.email %></span>
   <% else %>
-    <span itemprop="author"><a href="/<%= current_user.id %>"><%= review.user.full_name%></a></span>
+    <span itemprop="author"><a href="/<%= review.user.id %>"><%= review.user.full_name%></a></span>
   <% end %>
   <div itemprop="reviewBody">
     <%= simple_format(review.review) %>
