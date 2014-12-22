@@ -28,8 +28,10 @@
           <% if current_user.has_spree_role?("admin") %>
             <li><%= link_to "New Product", new_admin_product_path %></li>
           <% end %>
+          <li id="link-to-cart" data-hook><%= link_to_cart %></li>
           <li><%= link_to "Log Out", spree_logout_path %></li>
         <% else %>
+          <li id="link-to-cart" data-hook><%= link_to_cart %></li>
           <li><%= link_to "Log In", spree_login_path %></a></li>
           <li><%= link_to "Register", spree_signup_path %></li>
         <% end %>
