@@ -58,7 +58,7 @@ gem 'aws-sdk' #For using S3 to store images
 #For Heroku deployment
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
-ruby "2.1.3"
+ruby "2.1.2"
 
 
 

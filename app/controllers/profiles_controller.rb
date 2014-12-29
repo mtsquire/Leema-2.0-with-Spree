@@ -8,6 +8,8 @@ class ProfilesController < ApplicationController
       render file: 'public/404', status: 404, format: [:html]
     end
 
+    @products = @user.products.all.reverse
+
   end
 
 end
