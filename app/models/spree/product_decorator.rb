@@ -3,7 +3,7 @@ Spree::Product.class_eval do
 
   def self.search(search)
     if search
-      where(['name LIKE ?', "%#{search}%"])
+      where(['name ILIKE ?', "%#{search}%"])
     else
       @products = Spree::Product.all
     end
