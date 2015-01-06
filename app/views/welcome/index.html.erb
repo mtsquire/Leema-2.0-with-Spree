@@ -3,10 +3,14 @@
     <div class="row search-leema abs-center">
 	  <div class="col-xs-12">
 	    <div class="input-group">
-	      <input type="text" class="form-control input-lg main-search" placeholder="What are you looking for?">
-	      <span class="input-group-btn">
-	        <button class="btn btn-primary btn-lg" type="button"><i class="fa fa-search"></i></button>
-	      </span>
+	    	<%= form_tag products_path, :method => "get" do %>
+		      <%= text_field_tag :search, params[:search], class: 'form-control input-lg main-search', placeholder: "What are you looking for?" %>
+		    	<span class="input-group-btn"> 
+		      	<%= button_tag(type: 'submit', class: 'btn btn-primary btn-lg', :name => nil) do %>
+		      	<i class="fa fa-search"></i>
+		      	<% end %>
+		    	</span>  
+		    <% end %>
 	    </div><!-- /input-group -->
 	  </div><!-- /.col-lg-6 -->
 	</div><!-- /.row -->
