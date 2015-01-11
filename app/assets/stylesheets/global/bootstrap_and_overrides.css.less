@@ -72,9 +72,23 @@ a:hover {
 	z-index: 1000;
 }
 .logo img{
-	max-height: @navbar-height;
-	width: auto;
+	width: 295px;
 	padding: 10px;
+}
+
+@media (max-width: 420px) {
+	.logo img{
+		width: 220px;
+		padding: 10px;
+	}
+
+	.navbar-toggle {
+		margin: 23px 0;
+	}
+
+	.navbar {
+		min-height: 50px;
+	}
 }
 
 .logo {
