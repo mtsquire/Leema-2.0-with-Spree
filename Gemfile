@@ -54,7 +54,9 @@ gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :bran
 gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-3-stable'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '2-3-stable'
 gem 'aws-sdk' #For using S3 to store images
-gem "braintree" #For payment processing
+group :development do #TESTING
+  gem "braintree" #For payment processing
+end
 
 #For Heroku deployment
 gem 'rails_12factor', group: :production
