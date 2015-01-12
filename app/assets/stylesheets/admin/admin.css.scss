@@ -35,3 +35,11 @@ fieldset .filter-actions button, fieldset .filter-actions .button, fieldset .fil
 	-o-box-shadow: none;
 	-moz-box-shadow: none;
 }
+
+#admin-menu li .dropdown {
+	right:0;
+}
+
+#admin-menu li .dropdown > li {
+	display:block;
+}
