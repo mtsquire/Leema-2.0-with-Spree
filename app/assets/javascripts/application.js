@@ -16,3 +16,4 @@
 //= require global
 //= require_tree .
 //= require autoNumeric
+//= stub spree/backend/admin
