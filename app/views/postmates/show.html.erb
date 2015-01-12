@@ -1,0 +1,7 @@
+<div class="container">
+  <%= form_tag url_for(:controller => 'postmates', :action => 'get_delivery'), :method => 'post' do %>
+  <%= submit_tag "Get Delivery Quote", :action => 'get_delivery', :controller => 'postmates'%>  
+  <% end %>
+</div>
+
+<p>Result: <%= @result %></p>

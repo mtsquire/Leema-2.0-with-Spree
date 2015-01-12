@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
 
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
@@ -35,6 +35,12 @@ Rails.application.routes.draw do
   get '/:id', to: 'profiles#show'
 
   root 'welcome#index'
+
+  resources :postmates do
+      member do 
+          post 'get_delivery'
+      end
+    end
 
   # Logging in with Facebook #
   # match 'auth/:provider/callback', to: 'sessions#create'
