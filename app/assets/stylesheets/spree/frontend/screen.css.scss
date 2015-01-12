@@ -635,6 +635,43 @@ ul#products {
 }
 
 /*--------------------------------------*/
+/* Reviews
+/*--------------------------------------*/
+
+h6.review-author {
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+.reviewer-info {
+  margin-bottom: 10px;
+}
+
+.review {
+  padding-top: 30px;
+}
+
+.review + .review {
+  border-top: 1px solid #e1e1e1;
+}
+
+.review p {
+  text-align: left;
+}
+
+@media (max-width: 479px) {
+  .reviewer-info {
+    margin-top: 5px;
+  }
+
+  .reviews-rating {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+/*--------------------------------------*/
 /* Checkout
 /*--------------------------------------*/
 .out-of-stock {
