@@ -2,6 +2,7 @@ require 'httparty'
 require 'json'
 
 class PostmatesController < ApplicationController
+  @client_token = Braintree::ClientToken.generate
 
   def get_delivery
     api_key = 'f948ddc7-01e3-428d-8d4f-2155ab8f4e14'
