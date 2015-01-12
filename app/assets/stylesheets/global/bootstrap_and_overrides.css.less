@@ -71,10 +71,35 @@ a:hover {
 .navbar {
 	z-index: 1000;
 }
+
 .logo img{
-	max-height: @navbar-height;
-	width: auto;
+	width: 295px;
 	padding: 10px;
+	z-index: 1001;
+}
+
+.navbar-toggle {
+	z-index: 1002;
+}
+
+.gravatar {
+	width: 20px;
+	margin-right: 3px;
+}
+
+@media (max-width: 420px) {
+	.logo img{
+		width: 220px;
+		padding: 10px;
+	}
+
+	.navbar-toggle {
+		margin: 23px 10px 23px 0;
+	}
+
+	.navbar {
+		min-height: 50px;
+	}
 }
 
 .logo {
@@ -134,7 +159,7 @@ a:hover {
 }
 
 .about-user {
-	padding-top: 50px;
+	padding-top: 35px;
 }
 
 @media (max-width: 767px) {

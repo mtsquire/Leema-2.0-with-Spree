@@ -13,7 +13,8 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= stylesheet_link_tag "products", :media => "all" %>
+    <%= stylesheet_link_tag "profiles", :media => "all" %>
+    
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -36,8 +37,9 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "profiles" %>
   </head>
-  <body class="products">
+<body class="profiles">
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -56,17 +58,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
-          <li>
-            <a href="/<%= current_user.id %>"><%= image_tag current_user.gravatar_url, class: 'gravatar' %> <%= current_user.first_name %></a>
-          </li>
           <li><%= link_to "Browse", products_path %></li>
-          <% if spree_current_user.has_spree_role?("admin") %>
-            <li><%= link_to "New Product", new_admin_product_path %></li>
-          <% end %>
-          <li><%= link_to "Log Out", spree_logout_path %></li>
+          <li><%= link_to "Log Out", logout_path %></li>
         <% else %>
-          <li><%= link_to "Log In", spree_signin_path %></a></li>
-          <li><%= link_to "Register", spree_register_path %></li>
+          <li><%= link_to "Log In", signin_path %></a></li>
+          <li><%= link_to "Register", register_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
