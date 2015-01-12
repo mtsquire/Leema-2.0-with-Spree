@@ -1,8 +1,8 @@
 jQuery.fn.AdaptiveMenu = function(options){
 
 	var options = jQuery.extend({
-		text: "More...",
-		accuracy:70,
+		text: "More",
+		accuracy:130,
 		'class':null,
 		'classLinckMore':null
 	},options);
