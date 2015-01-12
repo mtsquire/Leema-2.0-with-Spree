@@ -1,7 +1,21 @@
-function getViewport() {
-    var a, b;
-    return "undefined" != typeof window.innerWidth ? (a = window.innerWidth, b = window.innerHeight) : "undefined" != typeof document.documentElement && "undefined" != typeof document.documentElement.clientWidth && 0 != document.documentElement.clientWidth ? (a = document.documentElement.clientWidth, b = document.documentElement.clientHeight) : (a = document.getElementsByTagName("body")[0].clientWidth, b = document.getElementsByTagName("body")[0].clientHeight), [a, b]
+var getViewport = function() {
+    var viewPortWidth;
+    var viewPortHeight;
+    if (typeof window.innerWidth != 'undefined') {
+        viewPortWidth = window.innerWidth,
+        viewPortHeight = window.innerHeight
+    }
+    else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+        viewPortWidth = document.documentElement.clientWidth,
+        viewPortHeight = document.documentElement.clientHeight
+    }
+    else {
+        viewPortWidth = document.getElementsByTagName('body')[0].clientWidth,
+        viewPortHeight = document.getElementsByTagName('body')[0].clientHeight
+    }
+    return [viewPortWidth, viewPortHeight];
 }
+
 function absCenterVertical() {
     $(".abs-center").each(function() {
         var a = $(this).outerHeight() / -2;
@@ -25,3 +39,4 @@ function getInternetExplorerVersion() {
     }
     return a
 }
+
