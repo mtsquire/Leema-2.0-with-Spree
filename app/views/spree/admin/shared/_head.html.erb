@@ -6,7 +6,7 @@
   <% if content_for? :title %>
     <%= yield :title %>
   <% else %>
-    <%= "Spree #{Spree.t('administration')}: " %>
+    <%= "Leema #{Spree.t('administration')}: " %>
     <%= Spree.t(controller.controller_name, :default => controller.controller_name.titleize) %>
   <% end %>
 </title>
@@ -20,6 +20,7 @@
 
 
 <%= javascript_include_tag 'spree/backend/all' %>
+<%= javascript_include_tag "bootstrap" %>
 
 <%= render "spree/admin/shared/translations" %>
 
