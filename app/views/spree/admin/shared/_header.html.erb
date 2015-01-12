@@ -14,11 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-          <li class='navbar-img'>
-            <%= image_tag current_user.gravatar_url, class: 'navbar-brand' %>
-          </li>
           <li>
-            <a href="/<%= current_user.id %>"><%= current_user.first_name %></a>
+            <a href="/<%= current_user.id %>"><%= image_tag current_user.gravatar_url, class: 'gravatar' %> <%= current_user.first_name %></a>
           </li>
           <% if current_user.has_spree_role?("admin") %>
             <li><%= link_to "My Store", admin_path %></li>

@@ -55,11 +55,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <% if signed_in? %>
-              <li class='navbar-img'>
-                <%= image_tag current_user.gravatar_url, class: 'navbar-brand' %>
-              </li>
               <li>
-                <a href="/<%= current_user.id %>"><%= current_user.first_name %></a>
+                <a href="/<%= current_user.id %>"><%= image_tag current_user.gravatar_url, class: 'gravatar' %> <%= current_user.first_name %></a>
               </li>
               <li><%= link_to "Browse", products_path %></li>
               <li><%= link_to "Log Out", logout_path %></li>
