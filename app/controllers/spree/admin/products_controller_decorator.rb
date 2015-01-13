@@ -1,4 +1,5 @@
 Spree::ProductsController.class_eval do
+  # Set this up for the search functionality
   def index
     @products = Spree::Product.search(params[:search])
 

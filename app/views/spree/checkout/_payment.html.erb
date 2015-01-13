@@ -67,24 +67,3 @@
   <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
   <script>Spree.disableSaveOnClick();</script>
 </div>
-
-
-
-<html>
-  <head>
-    <script type="text/javascript" src="https://js.braintreegateway.com/v2/braintree.js"></script>
-  </head>
-  <body>
-    <form id="merchant-form" action="/create-transaction" method="post">
-      <input type="text" name="payment_method_nonce" id="payment-method-nonce" />
-      <div id="paypal-container"></div>
-      <input type="submit" value="Submit" />
-    </form>
-    <script type="text/javascript">
-      braintree.setup("MIIBCgKCAQEAsenMnPTPS4sqAm08ry3DoC0ZpB7Gtd7N1YE5zgmV/ZMBagdvAHKh1mlKG0w9UwnjnRTmZ2lJdUllmCOxAEFCJp31PMrNK90B3geb881j/iaRMgWl3aY8ROtbZhDq+KK65f2hu+c17pz8H9pHynje+mHw7ztTIAW6b+jUi0ngRfF7ZRN0R3qQIQ1OenuZTD6P1RFq5hc/FPbo0DJZxae66XfsRFJSukain2L+KWYJgeISY8Y21ZOJDTM+rEFjODy+CLLu8XLmod/r/5IwpW1D4TyfWLHt0pnVBBKurTfVtmpHTpulaIs/zqdFc6sBZc2+8xluo4bzjIijJmKbytLTowIDAQAB", "paypal", {
-          container: "paypal-container",  // to specify DOM elements, use an ID, a DOM node, or a jQuery element
-          paymentMethodNonceInputField: "payment-method-nonce"
-        });
-    </script>
-  </body>
-</html>

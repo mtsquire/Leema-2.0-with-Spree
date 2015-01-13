@@ -25,11 +25,6 @@
     match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   end
   
-  resources :products do
-    resources :comments
-  end
-  resources :ratings
-  
   get 'welcome/index'
 
   get '/:id', to: 'profiles#show'
