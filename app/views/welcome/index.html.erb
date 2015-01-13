@@ -29,14 +29,81 @@
 </section>
 
 <section id="welcome-product-grid">
-	<% @products.first(3).each do |product| %>
-		<div class="col-sm-4 col-xs-6 welcome-product">
-			<!--TODO: The links to the products are not routing to the /products part of the path where Spree is mounted. I'll have to work on that -->
-			<%= link_to image_tag(product.images.first.attachment.url(:large)), controller: 'products', action: 'index', id: product %>
+	<div class="container"
+		<div class="row">
+			<% @products.first(3).each do |product| %>
+			<div class="col-sm-4 col-xs-6 welcome-product">
+				<!--TODO: The links to the products are not routing to the /products part of the path where Spree is mounted. I'll have to work on that -->
+				<%= link_to image_tag(product.images.first.attachment.url(:large)), controller: 'products', action: 'index', id: product %>
 				<div class="seller-info">
 					<h3 class="seller-name"><%= product.name %></h3>
 					<p class="product-descr"><%= product.description %></p>
 				</div>
+			</div>
+			<% end %>
 		</div>
-	<% end %>
+	</div>
 </section><!-- /#welcome-product-grid -->
+	
+<section id="features-benefits">
+	<div class="container">
+		<h2 class="text-center">Some Really Trendy Phrase</h2>
+		<div class="row">
+			<div class="col-sm-4">
+				<i class="fa fa-recycle"></i>
+				<h4>Organic Ingredients</h4>
+				<p>Alcatra kielbasa short loin venison. Pork belly andouille leberkas tenderloin. Sausage shoulder tri-tip meatloaf, pork loin swine turkey ground round shankle turducken. Sausage shankle turducken t-bone prosciutto.</p>
+			</div>
+			<div class="col-sm-4">
+				<i class="fa fa-cutlery"></i>
+				<h4>Fresh Food</h4>
+				<p>Alcatra kielbasa short loin venison. Pork belly andouille leberkas tenderloin. Sausage shoulder tri-tip meatloaf, pork loin swine turkey ground round shankle turducken. Sausage shankle turducken t-bone prosciutto.</p>
+			</div>
+			<div class="col-sm-4">
+				<i class="fa fa-heart"></i>
+				<h4>Made With Love</h4>
+				<p>Alcatra kielbasa short loin venison. Pork belly andouille leberkas tenderloin. Sausage shoulder tri-tip meatloaf, pork loin swine turkey ground round shankle turducken. Sausage shankle turducken t-bone prosciutto.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<i class="fa fa-truck"></i>
+				<p>Delivery</p>
+				<p>Alcatra kielbasa short loin venison. Pork belly andouille leberkas tenderloin. Sausage shoulder tri-tip meatloaf, pork loin swine turkey ground round shankle turducken. Sausage shankle turducken t-bone prosciutto.</p>
+			</div>
+			<div class="col-sm-4">
+				<i class="fa fa-users"></i>
+				<h4>Build a Community</h4>
+				<p>Alcatra kielbasa short loin venison. Pork belly andouille leberkas tenderloin. Sausage shoulder tri-tip meatloaf, pork loin swine turkey ground round shankle turducken. Sausage shankle turducken t-bone prosciutto.</p>
+			</div>
+			<div class="col-sm-4">
+				<i class="fa fa-shield"></i>
+				<h4>Secure Checkout</h4>
+				<p>Alcatra kielbasa short loin venison. Pork belly andouille leberkas tenderloin. Sausage shoulder tri-tip meatloaf, pork loin swine turkey ground round shankle turducken. Sausage shankle turducken t-bone prosciutto.</p>
+				<p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="text-break">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h2>Exceptional Creations</h2>
+				<p>Semiotics messenger bag bespoke, Williamsburg gluten-free Etsy hashtag pork belly pop-up salvia umami post-ironic letterpress. Four dollar toast raw denim mlkshk Intelligentsia lomo before they sold out small batch. Locavore Thundercats cliche deep v put a bird on it raw denim. Fixie listicle Williamsburg lomo mustache, Banksy Thundercats 3 wolf moon hella Neutra disrupt cronut. Kogi mixtape McSweeney's, Pitchfork tote bag authentic meditation wayfarers street art fingerstache typewriter Thundercats polaroid chillwave wolf. Pinterest small batch plaid, polaroid scenester Echo Park letterpress art party yr cronut asymmetrical banh mi pork belly. Farm-to-table freegan polaroid messenger bag American Apparel.</p>
+			</div>
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</section>
+
+<section id="get-started">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h2>Start eating today.</h2>
+				<a href="#" class="btn btn-primary">Get Started</a>
+			</div>
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</section>

@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------*/
 /* Forms
 /*--------------------------------------*/
-textarea, input[type="date"],
+/* textarea, input[type="date"],
 input[type="datetime"], input[type="datetime-local"],
 input[type="email"], input[type="month"], input[type="number"],
 input[type="password"], input[type="search"], input[type="tel"],
@@ -162,9 +162,9 @@ fieldset {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}
+} */
 
-input[type="submit"], input[type="button"],
+/* input[type="submit"], input[type="button"],
 input[type= "reset"], button, a.button {
   background-color: $link_text_color;
   background-image: none;
@@ -207,7 +207,7 @@ input[type= "reset"], button, a.button {
     border-color: $body_text_color;
     color: $layout_background_color;
   }
-}
+} */
 
 .ie8 {
   a.button {
@@ -437,12 +437,12 @@ nav#taxonomies {
 }
 
 .product-section-title {
-  text-transform: uppercase;
   margin-top: 15px;
 }
 
 .add-to-cart {
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   input[type="number"] {
     margin-right: 3px;
@@ -455,6 +455,8 @@ nav#taxonomies {
 span.price {
   font-weight: bold;
   color: $link_text_color;
+  margin: 20px 0;
+  display: block;
 
   &.selling {
     font-size: $product_detail_price_font_size;
@@ -634,8 +636,12 @@ ul#products {
   }
 }
 
+.product-title {
+  margin-top: 0px;
+}
+
 .share-product {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /*--------------------------------------*/
@@ -661,6 +667,10 @@ h6.review-author {
 
 .review p {
   text-align: left;
+}
+
+.ratings {
+  margin: 0px 0 20px;
 }
 
 @media (max-width: 479px) {
@@ -984,6 +994,8 @@ table#cart-detail {
       td[data-hook="cart_item_price"], td[data-hook="cart_item_total"] {
         @extend span.price;
         @extend span.price.selling;
+        display: table-cell;
+        margin: 0px;
       }
       td[data-hook="cart_item_quantity"] {
         .line_item_quantity {
@@ -996,13 +1008,15 @@ table#cart-detail {
           width: 20px;
         }
       }
+      td {
+        vertical-align: middle;
+      }
     }
   }
 }
 
 div[data-hook="inside_cart_form"] {
   .links {
-    margin-top: 15px;
     text-align: right;
   }
 
@@ -1018,12 +1032,11 @@ div[data-hook="inside_cart_form"] {
 }
 
 #empty-cart {
-  margin-top: -50px;
-  float: left;
+
 }
 
 .cart-subtotal, .cart-total {
-  background: #00ADEE;
+  background: $leema_blue;
 
   td h5 {
     color: #fff;

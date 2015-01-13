@@ -72,15 +72,35 @@
 
     <%= yield %>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <footer>
-            <p>&copy; Leema <%= Time.now.year %></p>
-          </footer>
-        </div>
-      </div><!--/row-->
-    </div> <!-- /container -->
+     <footer>
+      <div class="top">
+        <div class="container">
+          <div class="col-xs-12">
+             <ul class="list-inline social text-center">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+          </div><!-- close .col-xs-12 -->
+        </div><!-- close .container -->
+      </div><!-- close .top -->
+      <div class="bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>&copy; Leema <%= Time.now.year %></p>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-inline text-right">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div><!--/row-->
+        </div> <!-- /container -->
+      </div><!-- close .bottom -->
+    </footer>
 
   </body>
 </html>
