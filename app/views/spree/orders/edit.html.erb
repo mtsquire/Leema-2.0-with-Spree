@@ -45,7 +45,7 @@
               <%= form_tag empty_cart_path, :method => :put do %>
                 <%= submit_tag Spree.t(:empty_cart), :class => 'btn btn-danger' %>
                 <%= Spree.t(:or) %>
-                <%= link_to Spree.t(:continue_shopping), products_path, :class => 'continue btn btn-primary' %>
+                <%= link_to Spree.t(:continue_shopping), root_path, :class => 'continue btn btn-primary' %>
               <% end %>
             </div>
 
