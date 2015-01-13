@@ -2,7 +2,7 @@
   <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
     <% @body_id = 'product-details' %>
     <div class="row" id="product-info-page">
-      <div class="col-md-6" data-hook="product_left_part">
+      <div class="col-sm-6" data-hook="product_left_part">
         <div data-hook="product_left_part_wrap">
 
           <div id="product-images" data-hook="product_images">
@@ -27,14 +27,14 @@
         </div>
       </div>
 
-      <div class="col-md-6" data-hook="product_right_part">
+      <div class="col-sm-6" data-hook="product_right_part">
         <div data-hook="product_right_part_wrap">
 
           <h1 class="product-title" itemprop="name"><%= accurate_title %></h1>
 
           <div id="product-description" data-hook="product_description">
 
-            <div class="well" itemprop="description" data-hook="description">
+            <div itemprop="description" data-hook="description">
               <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
             </div>
 

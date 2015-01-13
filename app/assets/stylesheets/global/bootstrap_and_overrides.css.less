@@ -28,7 +28,25 @@
 @body-bg: #f8f8f8;
 
 // Fonts
-@font-family-serif: 'ABeeZee', Georgia, "Times New Roman", Times, serif;
+@logo-font: 'ABeeZee', Georgia, "Times New Roman", Times, serif;
+@font-family-serif: 'Roboto Slab', serif;
+@font-family-sans-serif: 'Roboto', sans-serif;
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @font-family-serif;
+}
+
+body {
+	font-family: @font-family-sans-serif;
+}
+
+.serif {
+	font-family: @font-family-serif !important;
+}
+
+.sans-serif {
+	font-family: @font-family-sans-serif !important;
+}
 
 @text-color: #676767;
 @headings-color: #555;
@@ -91,6 +109,12 @@ a:hover {
 	margin-right: 3px;
 }
 
+@media only screen and (max-width: 767px){
+	.container {
+		width: 100%;
+	}
+}
+
 @media (max-width: 420px) {
 	.logo img{
 		width: 220px;
@@ -118,7 +142,7 @@ a:hover {
 
 .logo-inverse {
 	color: #fff;
-	font-family: @font-family-serif;
+	font-family: @logo-font;
 }
 
 #default .container, #product-details .container {
