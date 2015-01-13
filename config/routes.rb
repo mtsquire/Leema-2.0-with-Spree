@@ -24,6 +24,9 @@
     match 'auth/failure', to: redirect('/'), via: [:get, :post]
     match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   end
+  #necessary to not throw a routing error on the welcome index page
+  resources :products
+    
   
   get 'welcome/index'
 
