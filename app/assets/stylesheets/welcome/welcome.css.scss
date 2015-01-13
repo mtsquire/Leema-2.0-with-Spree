@@ -1,4 +1,7 @@
 // Masthead
+.homepage p {
+    font-size: 16px;
+}
 
 .homepage .navbar-default {
     background: transparent;
@@ -62,7 +65,7 @@
     padding: 10px;
 }
 
-#welcome {
+section {
     padding: 30px 0;
 }
 
@@ -90,7 +93,7 @@
         padding: 10px 30px;
     }
 
-    #welcome {
+    section {
         padding: 60px 0;
     }
 
@@ -137,8 +140,6 @@
 
 
 #welcome-product-grid .welcome-product {
-    padding: 0px;
-    margin: 0px;
     position: relative;
 }
 
@@ -181,3 +182,45 @@
       transition: opacity .2s ease-in;
 }
 
+
+#features-benefits {
+
+    background: image-url("cupcake.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    text-align: center;
+    color: #fff;
+    min-height: 700px;
+    background-size: cover;
+
+    .row + .row {
+        padding: 50px 0;
+    }
+
+    h2 {
+        margin: 0;
+        padding-bottom: 50px;
+    }
+
+    h2, h4{
+        color: #fff;
+    }
+
+    i {
+        font-size: 60px;
+    }
+}
+
+#text-break {
+    h2 {
+        margin-bottom: 50px;
+    }
+}
+
+#get-started {
+    .btn {
+        padding: 20px 30px;
+        margin: 40px 0;
+        font-size: 16px
+    }
+}
