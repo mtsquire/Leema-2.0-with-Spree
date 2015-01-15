@@ -247,3 +247,17 @@ section {
     background-repeat: no-repeat;
     position: relative;
 }
+
+@media screen and (max-width: 768px){
+    #reindeer{
+        background-attachment: scroll;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 500px;
+        position: relative;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
