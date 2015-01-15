@@ -33,9 +33,11 @@
 		<div class="row">
 			<% @products.first(6).each do |product| %>
 			<div class="col-sm-4 col-xs-12 welcome-product">
-				<!--TODO: The links to the products are not routing to the /products part of the path where Spree is mounted. I'll have to work on that -->
-				<%= link_to product, :class => 'product-link', :itemprop => "name", :title => product.name do %>
-				<%= image_tag product.images.first.attachment.url(:large), :class => 'img-responsive center-block' %>
+				<!--TODO: The links to the products are not routing to the /products part of the path where Spree is mounted. I'll have to work on that
+				# <%= link_to product, :class => 'product-link', :itemprop => "name", :title => product.name do %>
+				# <%= image_tag product.images.first.attachment.url(:large), :class => 'img-responsive center-block' %>-->
+				<%= link_to image_tag(product.images.first.attachment.url(:large)), controller: 'products', action: 'index',:class => 'img-responsive center-block', id: product %>
+
 				<div class="seller-info">
 					<h3 class="seller-name"><%= product.name %></h3>
 					<p class="product-descr"><%= product.description %></p>
