@@ -99,6 +99,7 @@ section {
 
     #welcome h1 {
         font-size: 55px;
+        margin-top: 0px;
     }
 
     #welcome p.lead {
@@ -137,6 +138,11 @@ section {
         font-size: 30px;
     }
 }
+
+#welcome-product-grid {
+    padding-top: 0px;
+}
+
 
 .welcome-product:nth-of-type(n+4) {
     margin-top: 30px;
@@ -215,8 +221,9 @@ section {
     }
 }
 
-#text-break {
+.text-break {
     h2 {
+        margin-top: 0px;
         margin-bottom: 50px;
     }
 }
@@ -227,4 +234,14 @@ section {
         margin: 40px 0;
         font-size: 14px
     }
+}
+
+.image-break {
+    min-height: 700px;
+}
+
+#reindeer {
+    background: image-url("pretzel-reindeer.jpg");
+    background-size: cover;
+    background-position: center center;
 }
