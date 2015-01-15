@@ -30,6 +30,12 @@ function doneResizing() {
 
 var widthIsWide = !1;
 $(document).ready(function() {
+    // define viewport vairables
+    viewPortWidth = getViewport()[0],
+    viewPortHeight = getViewport()[1],
+    widthIsWide = (viewPortWidth > 768),
+    IEVersion = getInternetExplorerVersion();
+
     if (viewPortWidth = getViewport()[0], viewPortHeight = getViewport()[1], widthIsWide = viewPortWidth > 768, IEVersion = getInternetExplorerVersion(), widthIsWide) {
         var a = viewPortHeight + "px", b = $(".navbar").outerHeight();
         $(".masthead").each(function() {
@@ -53,5 +59,47 @@ $(document).ready(function() {
         b >= g && h >= b && d(g, h)
     };
 
+    //parrallax covers
+    // requestAnimationFrame method:
+    window.requestAnimationFrame = window.requestAnimationFrame
+        || window.mozRequestAnimationFrame
+        || window.webkitRequestAnimationFrame
+        || window.msRequestAnimationFrame
+        || function(f){setTimeout(f, 1000/60)}
 
+    var isInViewport = function(element,scrolled,offset,callback) {
+        var elementTop = element.offset().top,
+            elementHeight = element.outerHeight(),
+            elementVisibleAt = elementTop - viewPortHeight + offset,
+            elementBottom = elementTop + elementHeight;
+        if ( (scrolled >= elementVisibleAt) && (scrolled <= elementBottom) ) {
+            callback(elementVisibleAt,elementBottom);
+        }
+    }
+
+    if (widthIsWide) {
+
+    // define function to fire with requestAnimationFrame
+    parallaxBackground = function(){
+        var scrolled = window.pageYOffset;
+        $('#reindeer').each(function(){
+            var thisEl = $(this);
+            isInViewport(thisEl,scrolled,0,function(elementVisibleAt,elementBottom){
+                thisEl.css('background-position', '50% ' + ( 100 - ( ( scrolled - elementVisibleAt ) / elementBottom * 100 ) ) + '%');
+            });
+        });
+    }
+
+    parallaxBackground();
+
+    } else {
+        parallaxBackground = function(){}
+    }
+
+        // fire parallax functions on scroll through requestAnimationFrame if not oldIE
+    if ( !($('html').hasClass('lt-ie9')) ) {
+        window.addEventListener('scroll', function(){
+            requestAnimationFrame(parallaxBackground)
+        }, false)
+    }
 });
