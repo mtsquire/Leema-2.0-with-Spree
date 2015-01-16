@@ -32,37 +32,39 @@
 
 
 .input-group .form-control.main-search {
-    background: none !important;
+    background: rgba(255,255,255,.7) !important;
     border-color: rgba(58, 137, 255, 1);
-    border-style: none none solid none;
+    border-style: none none solid solid;
     border-width: 3px;
     border-radius: 0;
     outline: none;
     color: #1a1a1a;
-    padding: 15px 0 0 0;
     box-shadow: none;
     font-weight: 500;
 }
 
 /* Placeholder text color for browsers */
 .input-group .form-control.main-search::-webkit-input-placeholder {
-    color:#666;
+    color:#888;
 }
 .input-group .form-control.main-search:-moz-placeholder {
-    color:#666;
+    color:#888;
     opacity: 1;
 }
 .input-group .form-control.main-search::-moz-placeholder {
-    color:#666;
+    color:#888;
     opacity: 1;
 }
 .input-group .form-control.main-search::-ms-input-placeholder {
-    color:#666;
+    color:#888;
 }
 
 .search-leema .btn {
     border-radius: 0px;
     padding: 10px;
+    border-color: rgba(58, 137, 255, 1);
+    border-style: none none solid none;
+    border-width: 3px;
 }
 
 section {
@@ -84,13 +86,15 @@ section {
         height: 110px;
         line-height: 90px;
         margin:0px;
-        padding-top: 25px;
+        padding: 20px;
+        border-width: 5px;
     }
 
     .search-leema .btn {
         border-radius: 0px;
         height: 110px;
         padding: 10px 30px;
+        border-width: 5px;
     }
 
     section {
@@ -118,13 +122,15 @@ section {
         height: 90px;
         line-height: 70px;
         margin:0px;
-        padding-top: 25px;
+        padding: 20px;
+        border-width: 3px;
     }
 
     .search-leema .btn {
         border-radius: 0px;
         height: 90px;
         padding: 10px 20px;
+        border-width: 3px;
     }
     #welcome {
         padding: 60px 0;
@@ -246,4 +252,18 @@ section {
     background-position:0 0;
     background-repeat: no-repeat;
     position: relative;
+}
+
+@media screen and (max-width: 768px){
+    #reindeer{
+        background-attachment: scroll;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 500px;
+        position: relative;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 }
