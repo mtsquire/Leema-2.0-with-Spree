@@ -14,7 +14,8 @@ Spree::Admin::ProductsController.class_eval do
     end
 
     session[:return_to] = request.url
-    respond_with(@collection)
+    # Removing this line fixed the double render error
+    # respond_with(@collection)
     
   end
 
