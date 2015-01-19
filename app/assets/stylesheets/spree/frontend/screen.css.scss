@@ -702,10 +702,8 @@ h6.review-author {
 
   li {
     float: left;
-    margin-right: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 5px 20px;
     color: lighten($body_text_color, 20);
 
     &.current-first, &.current {
@@ -748,24 +746,23 @@ h6.review-author {
   }
 }
 
+.form-buttons [data-hook="save_user_address"] label {
+  padding-left: 0px;
+}
+
 
 
 #checkout-summary {
-  text-align: center;
-  border: $default_border;
-  margin-top: 23px;
-  margin-left: 0;
-
-  h3 {
-    text-transform: uppercase;
-    font-size: $base_font_size + 2;
-    border-bottom: $default_border;
-  }
 
   table {
     width: 100%;
-
+    tr {
+      td {
+        vertical-align: middle;
+      }
+    }
     tr[data-hook="item_total"] {
+
       td:last-child {
         strong {
           @extend span.price;
@@ -775,20 +772,27 @@ h6.review-author {
 
     tr[data-hook="order_total"] {
       border-bottom: none;
-    };
+    }
+
+    tr[data-hook="order_total"] {
+      background: $link_text_color;
+      color: #fff;
+    }
 
     #summary-order-total {
-      @extend span.price;
+      color: #fff;
       font-size: $base_font_size + 2;
+      font-weight: bold;
     }
   }
 }
 
 #billing, #shipping, #shipping_method,
-#payment, #order_details, #order_summary {
-  margin-top: 10px;
+#payment, #order_details, #order_summary, #checkout-summary {
+
   border: $default_border;
   padding: 10px;
+
 
   legend {
     text-transform: uppercase;
@@ -903,7 +907,8 @@ h6.review-author {
     text-align: center;
     text-transform: uppercase;
     font-weight: normal;
-    font-size :11px;
+    font-size :12px;
+    padding: 5px;
   }
 
   .stock-location {
@@ -913,6 +918,7 @@ h6.review-author {
     font-weight: normal;
     background-color: $link_text_color;
     color: white;
+    padding: 5px;
   }
 
   .unshippable {
@@ -934,7 +940,7 @@ h6.review-author {
         font-weight: bold;
 
         .rate-cost {
-          color: $link_text_color;
+          color: #fff;
         }
       }
     }
@@ -964,10 +970,7 @@ h6.review-author {
 }
 
 p[data-hook="use_billing"] {
-  float: right;
-  margin-top: -18px;
   background-color: $layout_background_color;
-  padding: 5px;
 }
 
 #coupon_status {
@@ -1284,7 +1287,7 @@ table.order-summary {
   .progress-steps li {
     padding: 0;
     margin: 0;
-    width: 50%;
+    width: 100%;
 
     span {
       display: block;
