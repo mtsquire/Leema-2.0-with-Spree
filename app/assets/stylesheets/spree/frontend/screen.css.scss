@@ -1038,7 +1038,7 @@ div[data-hook="inside_cart_form"] {
 .cart-subtotal, .cart-total {
   background: $leema_blue;
 
-  td h5 {
+  td {
     color: #fff;
   }
 }
@@ -1307,13 +1307,8 @@ table.order-summary {
   table#cart-detail, table[data-hook="order_details"] {
     tbody {
       tr {
-        td[data-hook="cart_item_description"], td[data-hook="order_item_description"] {
-          padding: 0 !important;
-          text-indent: -9999px;
-
-          h4 {
-            display: none;
-          }
+        td[data-hook="order_item_description"] {
+          padding: 0;
         }
         td[data-hook="cart_item_image"], td[data-hook="order_item_image"] {
           img {
