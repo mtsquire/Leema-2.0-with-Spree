@@ -13,17 +13,19 @@
       </thead>
       <tbody id="line_items" data-hook>
         <%= render partial: 'line_item', collection: order_form.object.line_items, locals: {order_form: order_form} %>
-      <% if @order.all_adjustments.exists? %>
-        <tr class="cart-subtotal">
-          <td colspan="4" align='right'><h5><%= Spree.t(:cart_subtotal, :count => @order.line_items.sum(:quantity)) %></h5></th>
-          <td colspan><h5><%= order_form.object.display_item_total %></h5></td>
-          <td></td>
-        </tr>
-        <%= render "spree/orders/adjustments" %>
-      <% end %>
-     </tbody>
+      </tbody>
     </table>
   </div><!-- close .table-container -->
+    <table class="table">
+      <tbody>
+         <% if @order.all_adjustments.exists? %>
+          <tr class="cart-subtotal">
+            <td colspan="6" align='right'><h5><%= Spree.t(:cart_subtotal, :count => @order.line_items.sum(:quantity)) %>: <strong><%= order_form.object.display_item_total %></strong></h5></td>
+          </tr>
+          <%= render "spree/orders/adjustments" %>
+        <% end %>
+      </tbody>
+    </table>
     <table class="table">
       <tbody>
         <tr class="cart-total">

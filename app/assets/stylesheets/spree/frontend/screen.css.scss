@@ -1041,6 +1041,10 @@ div[data-hook="inside_cart_form"] {
 .cart-subtotal, .cart-total {
   background: $leema_blue;
 
+  h5 {
+    color: #fff;
+  }
+
   td {
     color: #fff;
   }
