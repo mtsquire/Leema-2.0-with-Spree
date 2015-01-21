@@ -88,6 +88,9 @@ $fourth_level: #cbcbc9;
 		position: relative;
 		overflow: hidden;
 	}
+	li.selected a {
+		background: #3f51b5;
+	}
 	li a {
 		position: relative;
 		display: block;
@@ -212,9 +215,27 @@ $fourth_level: #cbcbc9;
 		}
 		li a {
 			border-left: 1px solid #3a89ff;
-			border-bottom: none;
 			text-align: center;
 			padding: 2em .96em;
+
+			&:hover{
+				overflow: visible;
+				&:after {
+					content: '';
+					position: absolute;
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-top: 5px solid #3f51b5;
+					bottom: 0px;
+					margin-bottom: -5px;
+					left: 50%;
+					margin-left: -10px;
+					z-index: 1;
+				}
+			}
+		}
+		li.selected a {
+			overflow: visible;
 
 			&:after {
 				content: '';
