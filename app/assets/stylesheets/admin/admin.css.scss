@@ -190,6 +190,10 @@ $fourth_level: #cbcbc9;
 	}
 }
 
+#sub-menu li.selected a {
+	text-decoration: underline;
+}
+
 @media all and (min-width: 950px) {
 	body.one-page {
 		padding-top: 70px;
