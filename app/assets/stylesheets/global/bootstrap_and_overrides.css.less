@@ -99,6 +99,44 @@ input[type="radio"], input[type="checkbox"]{
 	border:	none;
 }
 
+.btn-favorite {
+	background: #ff6fa0;
+	color: #fff;
+
+	&:hover {
+		background: darken(#ff6fa0, 10%);
+		color: #fff;
+
+		&:before {
+			content: "\f004";
+			font-family: FontAwesome;
+		}
+	}
+
+	&:before {
+		content: "\f08a";
+		font-family: FontAwesome;
+	}
+
+	&.selected {
+
+		background: darken(#ff6fa0, 10%);
+
+		&:hover {
+			background: #ff6fa0;
+			&:before {
+				content: "\f08a";
+				font-family: FontAwesome;
+			}
+		}
+
+		&:before {
+			content: "\f004";
+			font-family: FontAwesome;
+		}
+	}
+}
+
 .navbar {
 	z-index: 1000;
 }

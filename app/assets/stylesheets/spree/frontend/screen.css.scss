@@ -430,6 +430,47 @@ nav#taxonomies {
 /*--------------------------------------*/
 /* Products
 /*--------------------------------------*/
+
+#product-brand {
+  background:#fff;
+  padding: 15px 0;
+  margin-top: -10px;
+}
+
+#product-brand h3 {
+  margin-top: 0px;
+}
+
+@media (min-width: 768px) {
+  #product-brand h3 {
+    margin:35px 0 0;
+  }
+
+  .btn-favorite {
+    float: right;
+    margin: 35px 0 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #product-brand h3 {
+    margin:35px 0 0;
+  }
+  .btn-favorite {
+    margin:35px 0 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-favorite {
+    margin:20px 0 0;
+  }
+  #product-brand h3 {
+    margin:20px 0 0;
+  }
+}
+
+
 [data-hook="product_show"] {
   h6 {
     font-size: $product_detail_title_font_size;
