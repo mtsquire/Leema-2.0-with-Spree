@@ -430,6 +430,65 @@ nav#taxonomies {
 /*--------------------------------------*/
 /* Products
 /*--------------------------------------*/
+
+#product-brand {
+  background:#fff;
+  padding: 15px 0;
+  margin-top: -10px;
+}
+
+.btn-favorite {
+  float: right;
+  margin: 35px 0 0;
+}
+
+.seller-name, .seller-logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.seller-name {
+  margin: 0px;
+}
+
+.seller-logo {
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 671px) and (max-width: 767px) {
+  .seller-logo {
+    width: 75px;
+  }
+  .btn.btn-favorite {
+    margin: 25px 0 0;
+    font-size: 11px;
+  }
+  .seller-name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 670px) {
+  .seller-name {
+    font-size: 20px;
+  }
+
+  .seller-logo {
+    display: none;
+  }
+
+  .btn.btn-favorite {
+    margin: 0px 0 0;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 450px) {
+  .seller-name {
+    font-size: 16px;
+  }
+}
+
 [data-hook="product_show"] {
   h6 {
     font-size: $product_detail_title_font_size;

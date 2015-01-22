@@ -99,6 +99,44 @@ input[type="radio"], input[type="checkbox"]{
 	border:	none;
 }
 
+.btn-favorite {
+	background: #ff6fa0;
+	color: #fff;
+
+	&:hover {
+		background: darken(#ff6fa0, 10%);
+		color: #fff;
+
+		&:before {
+			content: "\f004";
+			font-family: FontAwesome;
+		}
+	}
+
+	&:before {
+		content: "\f08a";
+		font-family: FontAwesome;
+	}
+
+	&.selected {
+
+		background: darken(#ff6fa0, 10%);
+
+		&:hover {
+			background: #ff6fa0;
+			&:before {
+				content: "\f08a";
+				font-family: FontAwesome;
+			}
+		}
+
+		&:before {
+			content: "\f004";
+			font-family: FontAwesome;
+		}
+	}
+}
+
 .navbar {
 	z-index: 1000;
 }
@@ -145,7 +183,7 @@ input[type="radio"], input[type="checkbox"]{
 
 .logo {
 	color: @navbar-default-brand-color !important;
-	font-family: @font-family-serif;
+	font-family: @logo-font;
 }
 
 /*.logo:hover {
@@ -158,80 +196,12 @@ input[type="radio"], input[type="checkbox"]{
 	font-family: @logo-font;
 }
 
-#default .container, #product-details .container {
+#default .container, #product-details .container, .profiles .container {
 	padding-top: 30px;
 }
 
 #taxonomies h4 {
 	margin: 0px 0 10px;
-}
-
-
-/* Profile Page Section Covers */
-.section-cover{
-	position: relative;
-	overflow: hidden;
-	background: #000;
-	margin-bottom: 40px
-
-}
-
-.section-cover .section-cover-image {
-	width: 100%;
-	display: block;
-}
-
-.edit-profile {
-	float: right;
-}
-
-.profile-image {
-	margin-top: -127px;
-
-		img {
-			width: 175px;
-			height: 175px;
-		}
-
-		.img-thumbnail {
-			background-color: @brand-primary;
-			padding: 2px;
-		}
-}
-
-.about-user {
-	padding-top: 35px;
-}
-
-@media (max-width: 767px) {
-	.section-cover {
-		margin-bottom: 20px;
-	}
-
-	.profile-image {
-			margin-top: 0px;
-
-				img {
-					width: 175px;
-					height: 175px;
-				}
-
-				.img-thumbnail {
-					background-color: @brand-primary;
-					padding: 2px;
-				}
-		}
-
-	.edit-profile {
-		float: none;
-		text-align: right;
-		margin-bottom: 20px;
-	}
-
-	.about-user {
-		padding-top: 20px;
-	}
-
 }
 
 
@@ -306,6 +276,10 @@ footer {
 		padding: 20px 0;
 		background: darken(@body-bg, 5%);
 		border-top: 1px solid #C5C5C5;
+
+		.container {
+			padding-top: 0px !important;
+		}
 	}
 
 	.bottom {

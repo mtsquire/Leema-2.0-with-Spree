@@ -21,27 +21,11 @@ jQuery(function($) {
   <% # Re-adjusting admin menu during test causes tests to fail,
      # like states_spec and shipping_methods_spec. Let's not do this. %>
   <% unless Rails.env.test? %>
-    $('.main-menu-wrapper ul').AdaptiveMenu({
-      text: "<a href='#' class='fa'><i class='fa fa-chevron-down'></i> " + Spree.translations.more + "</a>",
-      klass: "dropdown"
+    $(".flexnav").flexNav({
+      'calcItemWidths':   true
     });
   <% end %>
 
-  // Add some tips
-  $('.with-tip').powerTip({
-    smartPlacement: true,
-    fadeInTime: 50,
-    fadeOutTime: 50,
-  });
-
-  $('body')
-    .on('powerTipPreRender', '.with-tip', function() {
-      $('#powerTip').addClass($(this).data('action'));
-      $('#powerTip').addClass($(this).data('tip-color'));
-    })
-    .on('powerTipClose', '.with-tip', function() {
-      $('#powerTip').removeClass($(this).data('action'));
-    })
 
   // Make flash messages dissapear
   setTimeout('$(".flash").fadeOut()', 5000);

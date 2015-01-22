@@ -1,4 +1,18 @@
 <% cache [current_currency, @product] do %>
+  <div id="product-brand" class="row">
+    <div class="col-sm-10 col-xs-8">
+      <a href="#">
+        <img class="seller-logo" src="http://placehold.it/100x100">
+        <h3 class="seller-name">Carly's Better Bites</h3>
+      </a>
+    </div>
+    <div class="col-sm-2 col-xs-4">
+        <a href="#" class="btn btn-favorite">
+          Favorite
+        </a>
+    </div>
+  </div>
+
   <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
     <% @body_id = 'product-details' %>
     <div class="row" id="product-info-page">
