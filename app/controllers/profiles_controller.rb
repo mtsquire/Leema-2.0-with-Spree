@@ -2,8 +2,10 @@ class ProfilesController < ApplicationController
   layout "profiles"
   def show
     @user = User.find(params[:id])
-    @supplier = spree_current_user.supplier
-    @products = @supplier.products.all
+    @supplier = @user.supplier
+    if @user.supplier?
+      @products = @supplier.products.all
+    end
 
     if @user
       render action: :show

@@ -1,8 +1,10 @@
 <body>
   <div class="section-cover">
-
+    <% if @user.cover_photo_file_name? %>
+      <%= image_tag @user.cover_photo.url(:large), class: "section-cover-image img-responsive" %>
+    <% else %>
       <img class="section-cover-image img-responsive" src="http://placehold.it/2000x580">
-
+    <% end %>
     <h1>Your Store's Name</h1>
   </div>
   <div class="container">
@@ -38,19 +40,21 @@
   <div class="container products">
     <div class="row">
       <div class="col-xs-12">
-        <div class="page-header">
-          <h3>Products</h3>
-        </div>
-        <% @supplier.products.each do |product| %>
-          <div class="col-sm-4 col-xs-12 welcome-product">
-          <%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
-          <%= image_tag product.images.first.attachment.url(:large), :class => 'img-responsive center-block' %>
+        <% if @user.supplier? %>
+          <div class="page-header">
+            <h3>Products</h3>
+          </div>
+          <% @supplier.products.each do |product| %>
+            <div class="col-sm-4 col-xs-12 welcome-product">
+            <%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
+              <%= image_tag product.images.first.attachment.url(:large), :class => 'img-responsive center-block' %>
 
-        <div class="seller-info">
-          <h3 class="seller-name"><%= product.name %></h3>
-          <p class="product-descr"><%= product.description %></p>
-        </div>
-        <% end %>
+              <div class="seller-info">
+              <h3 class="seller-name"><%= product.name %></h3>
+              <p class="product-descr"><%= product.description %></p>
+            </div>
+            <% end %>
+          <% end %>
         <% end %>
 
       </div><!-- close .col-xs-12 -->
