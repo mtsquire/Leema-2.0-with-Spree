@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
     @products = Spree::Product.all
     @images = Spree::Image.all
     @users = User.all
+    @suppliers = Spree::Supplier.all
   end
   
 end

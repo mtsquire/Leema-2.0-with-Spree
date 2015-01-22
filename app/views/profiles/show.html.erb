@@ -36,9 +36,16 @@
         <div class="page-header">
           <h3>Products</h3>
         </div>
-        <% @user.products.each do %>
-          <%= @product.name %>
+        <% @supplier.products.each do |product| %>
+          <div class="col-sm-4 col-xs-12 welcome-product">
+          <%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
+          <%= image_tag product.images.first.attachment.url(:large), :class => 'img-responsive center-block' %>
 
+        <div class="seller-info">
+          <h3 class="seller-name"><%= product.name %></h3>
+          <p class="product-descr"><%= product.description %></p>
+        </div>
+        <% end %>
         <% end %>
 
       </div><!-- close .col-xs-12 -->

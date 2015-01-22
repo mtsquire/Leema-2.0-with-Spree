@@ -19,7 +19,7 @@ Spree::Admin::ProductsController.class_eval do
     
   end
 
-  private
+  
 
   def get_suppliers
     @suppliers = Spree::Supplier.order(:name)

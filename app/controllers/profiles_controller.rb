@@ -2,13 +2,14 @@ class ProfilesController < ApplicationController
   layout "profiles"
   def show
     @user = User.find(params[:id])
+    @supplier = spree_current_user.supplier
+    @products = @supplier.products.all
+
     if @user
       render action: :show
     else
       render file: 'public/404', status: 404, format: [:html]
     end
-
-    @products = @user.products.all.reverse
 
   end
 
