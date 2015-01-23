@@ -6,7 +6,7 @@
   #
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/store'
-        
+
   get 'profiles/show'
 
   get 'ratings/create'
@@ -26,16 +26,18 @@
   end
   #necessary to not throw a routing error on the welcome index page
   resources :products
-    
-  
+
+
   get 'welcome/index'
+
+  get '/sell' => 'sell#index'
 
   get '/:id', to: 'profiles#show'
 
   root 'welcome#index'
 
   resources :postmates do
-      member do 
+      member do
           post 'get_delivery'
       end
     end

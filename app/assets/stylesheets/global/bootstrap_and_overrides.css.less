@@ -75,6 +75,16 @@ body {
   background: @link-hover-color; /* Gecko Browsers */
 }
 
+section {
+  padding: 30px 0;
+}
+
+@media (min-width: 990px) {
+  section {
+      padding: 60px 0;
+  }
+}
+
 p {
 	padding: 0px;
 }
@@ -97,6 +107,10 @@ input[type="radio"], input[type="checkbox"]{
 
 .btn, a.button {
 	border:	none;
+}
+
+.btn-lg {
+	border-radius: 0px;
 }
 
 .btn-favorite {
