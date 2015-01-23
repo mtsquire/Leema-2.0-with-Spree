@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="row">
 			<h1 class="text-center">Welcome to <span class="logo">Leema</span></h1>
-			<p class="text-center lead">Expore the most popular treats on the market</p>
+			<p class="text-center lead">The marketplace that allows you to buy food from culinary artists around the country.</p>
 			<%= image_tag "postmates.png", class: 'img-responsive center' %>
 		</div><!-- /.row -->
 	</div><!-- /.container -->
@@ -31,6 +31,7 @@
 <section id="welcome-product-grid">
 	<div class="container"
 		<div class="row">
+			<h2 class="text-center">Expore The Most Popular Treats On The Market</h2>
 			<% @products.first(6).each do |product| %>
 			<div class="col-sm-4 col-xs-12 welcome-product">
 				<%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
