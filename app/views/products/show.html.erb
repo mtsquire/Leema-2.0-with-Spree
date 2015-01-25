@@ -7,7 +7,7 @@
     <p>
       <strong>Price:</strong>
       <%= humanized_money_with_symbol @product.price %>
-     
+
     <p>
       <strong>Description:</strong>
       <%= @product.description %>
@@ -27,11 +27,11 @@
             </span>
             <span class="post-meta">
             </span>
-          </header> 
+          </header>
           <div class="comment-content">
         <p>
         </p>
-          </div><!-- .comment-content -->                    
+          </div><!-- .comment-content -->
         </div>
 
       </div><!-- .media-body -->
@@ -50,19 +50,19 @@
       <% else %>
         <% user_id = -1 %>
       <% end %>
-      <h4>Add a rating:</h4>        
+      <h4>Add a rating:</h4>
       <%= form_for @product.ratings.find_or_create_by(user_id: user_id), :html => {:id => form_id, :class => "star_rating_form"} do |f| %>
           <%= f.hidden_field :product_id, :value => @product.id %>
           <% if user_signed_in? %>
               <%= f.hidden_field :user_id, :value => current_user.id %>
-          <% end %>        
+          <% end %>
           <%= f.hidden_field :score, :id => form_id + "_stars" %>
       <% end %>
       <% (1..5).each do |i| %>
         <li class="rating_star" id="<%= form_id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= form_id %>"></li>
       <% end %>
       <br><br>-->
-      <%= link_to "Back", products_path %> | 
+      <%= link_to "Back", products_path %> |
       <%= link_to 'Edit', edit_product_path(@product) %>
 
   </div>
