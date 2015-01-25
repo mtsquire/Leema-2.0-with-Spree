@@ -1,32 +1,14 @@
-<section class="masthead" id="content" role="main">
+<section class="masthead home" id="content" role="main">
   <div class="container">
-    <div class="row search-leema abs-center">
-	  <div class="col-xs-12">
-	   	<%= form_tag products_path, :method => "get" do %>
-	    	<div class="input-group">
-		      <%= text_field_tag :search, params[:search], class: 'form-control input-lg main-search', placeholder: "What are you looking for?" %>
-		    	<span class="input-group-btn">
-		      	<%= button_tag(type: 'submit', class: 'btn btn-primary btn-lg', :name => nil) do %>
-		      	<i class="fa fa-search"></i>
-		      	<% end %>
-		    	</span>
-		    </div><!-- /input-group -->
-		<% end %>
-
-	  </div><!-- /.col-lg-6 -->
-	</div><!-- /.row -->
+		<div class="row">
+			 <div class="col-xs-12 intro">
+				 	<h1 class="text-center">The marketplace that connects culinary artists to people with great taste.</h1>
+			  	<a href="#" class="btn btn-lg btn-primary">Browse Our Products</a>
+		  </div>
+		</div>
   </div><!-- /.container -->
 </section><!-- /.masthead -->
 
-<section id="welcome">
-	<div class="container">
-		<div class="row">
-			<h1 class="text-center">Welcome to <span class="logo">Leema</span></h1>
-			<p class="text-center lead">The marketplace that connects culinary artists to people with great taste.</p>
-			<%= image_tag "postmates.png", class: 'img-responsive center' %>
-		</div><!-- /.row -->
-	</div><!-- /.container -->
-</section>
 
 <section id="welcome-product-grid">
 	<div class="container"
