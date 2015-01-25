@@ -1,5 +1,5 @@
 class SellController < ActionController::Base
-  layout "interior"
+  layout "home"
   def sell
 
   end
