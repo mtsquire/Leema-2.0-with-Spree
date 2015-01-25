@@ -8,23 +8,23 @@ function doneResizing() {
     if (b != viewPortWidth && (console.log("Viewport Width: " + viewPortWidth + ", New Width: " + b), widthIsWide && 769 > b ? prlxBg = function() {
     } : !widthIsWide && b > 768 || (resizing = !1), widthIsWide = b > 768 ? !0 : !1), c != viewPortHeight && console.log("Viewport Height: " + viewPortHeight + ", New Height: " + c), c != viewPortHeight || b != viewPortWidth)
         if (widthIsWide) {
-            var d = c + "px", e = $(".navbar").outerHeight();
+            var d = (c * .66666667) + "px", e = $(".navbar").outerHeight();
             $(".masthead").each(function() {
-                $(this).css("height", d).css("margin-top", -e).css("padding-top", e), absTopThirdVertical(), $(this).css("visibility", "visible").css("opacity", "1");
+                $(this).css("height", d), absTopThirdVertical(), $(this).css("visibility", "visible").css("opacity", "1");
 
                 // Reposition search bar in center of masthead
-                searchMargin = $('.masthead').height() / 2;
-                searchHeight = $('.search-leema').height() / 2;
-                $(".search-leema").css("margin-top", Math.floor(searchMargin - searchHeight))
+                introMargin = $('.masthead').height() / 2;
+                introHeight = $('.intro').height() / 2;
+                $(".intro").css("margin-top", Math.floor(introMargin - introHeight))
             })
         } else {
             $(".masthead").css("height", "").css("margin-top", "").css("padding-top", "").css("visibility", "visible").css("opacity", "1"), $(".abs-topthird").css("margin-top", "");
             viewPortHeight = c, viewPortWidth = b;
 
             // Reposition search bar in center of masthead
-            searchMargin = $('.masthead').height() / 2;
-            searchHeight = $('.search-leema').height() / 2;
-            $(".search-leema").css("margin-top", Math.floor(searchMargin - searchHeight))
+            introMargin = $('.masthead').height() / 2;
+            introHeight = $('.intro').height() / 2;
+            $(".intro").css("margin-top", Math.floor(introMargin - introHeight))
         }
     }
 
@@ -37,16 +37,17 @@ $(document).ready(function() {
     IEVersion = getInternetExplorerVersion();
 
     if (viewPortWidth = getViewport()[0], viewPortHeight = getViewport()[1], widthIsWide = viewPortWidth > 768, IEVersion = getInternetExplorerVersion(), widthIsWide) {
-        var a = viewPortHeight + "px", b = $(".navbar").outerHeight();
+        var a = (viewPortHeight * .66666667) + "px",
+            b = $(".navbar").outerHeight();
         $(".masthead").each(function() {
-            $(this).css("height", a).css("margin-top", -b).css("padding-top", b), absTopThirdVertical(), $(this).css("visibility", "visible").css("opacity", "1");
+            $(this).css("height", a), absTopThirdVertical(), $(this).css("visibility", "visible").css("opacity", "1");
         })
     }
 
     // Reposition search bar in center of masthead
-    searchMargin = $('.masthead').height() / 2;
-    searchHeight = $('.search-leema').height() / 2;
-    $(".search-leema").css("margin-top", Math.floor(searchMargin - searchHeight))
+    introMargin = $('.masthead').height() / 2;
+    introHeight = $('.intro').height() / 2;
+    $(".intro").css("margin-top", Math.floor(introMargin - introHeight))
 
     var c;
     $(window).on("resize", function() {
