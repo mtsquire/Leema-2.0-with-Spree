@@ -24,8 +24,8 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
   end
 
-  def to_param
-    full_name
+  def leema_admin?
+    email == "brandon.a.hay@gmail.com" || "scottlevy89@gmail.com" || "mtsquire@gmail.com"
   end
 
   def gravatar_url
