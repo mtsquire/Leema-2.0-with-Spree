@@ -15,7 +15,7 @@
 		<div class="row">
 			<h2 class="text-center">Expore The Most Popular Treats On The Market</h2>
 			<% @products.first(6).each do |product| %>
-			<div class="col-sm-4 col-xs-12 welcome-product">
+			<div class="col-md-4 col-sm-6 col-xs-12 welcome-product">
 				<%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
 				<%= image_tag product.images.first.attachment.url(:large), :class => 'img-responsive center-block' %>
 
