@@ -3,7 +3,7 @@
     <% if @user.cover_photo_file_name? %>
       <%= image_tag @user.cover_photo.url(:large), class: "section-cover-image img-responsive" %>
     <% else %>
-      <img class="section-cover-image img-responsive" src="http://placehold.it/2000x580">
+      <%= image_tag("profile-placeholder.jpg", :alt => "Leema Cover Photo", :class => "section-cover-image img-responsive") %>
     <% end %>
     <h1>Your Store's Name</h1>
   </div>
