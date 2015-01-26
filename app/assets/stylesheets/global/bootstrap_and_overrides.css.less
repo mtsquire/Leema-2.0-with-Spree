@@ -236,6 +236,11 @@ textarea {
 	z-index: 1002;
 }
 
+.navbar-nav > li > .dropdown-menu{
+	box-shadow: none;
+	border-top:none;
+}
+
 .gravatar {
 	width: 20px;
 	margin-right: 3px;
@@ -351,7 +356,7 @@ textarea {
 }
 
 
-
+/* Sell Page */
 .icon-blurb {
 
 	&+.icon-blurb {
@@ -378,6 +383,28 @@ textarea {
 		display: inline-block;
 		vertical-align: middle;
 		width: 69%;
+	}
+}
+
+
+.pricing-box {
+	width: 100%;
+	position: relative;
+	background: @brand-primary;
+	font-weight: 100;
+	margin-bottom: 30px;
+
+	.pricing-percent {
+		padding: 100px 0;
+		color: #fff;
+		font-size: 60px;
+		text-align: center;
+	}
+
+	.per-trans {
+		font-size: 16px;
+		text-transform: uppercase;
+		text-align: center;
 	}
 }
 
