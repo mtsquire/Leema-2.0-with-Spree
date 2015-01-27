@@ -13,6 +13,7 @@
 //= require css_browser_selector_dev
 //= require spin
 //= require trunk8
+//= require jquery.flexnav.min
 //= require equalize
 //= require responsive-tables
 //= require spree
