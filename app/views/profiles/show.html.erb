@@ -5,7 +5,7 @@
     <% else %>
       <%= image_tag("profile-placeholder.jpg", :alt => "Leema Cover Photo", :class => "section-cover-image img-responsive") %>
     <% end %>
-    <h1>Your Store's Name</h1>
+    <h1><%= @supplier.store_name %></h1>
   </div>
   <div class="container">
     <% if @user == current_user %>
