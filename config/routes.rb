@@ -20,9 +20,6 @@
     get 'logout', to: 'devise/sessions#destroy', as: :logout
     get 'edit', to: 'devise/registrations#edit', as: :edit
     put "update" => 'devise/registrations#update', as: :updateprofile
-    match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-    match 'auth/failure', to: redirect('/'), via: [:get, :post]
-    match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   end
   #necessary to not throw a routing error on the welcome index page
   resources :products
