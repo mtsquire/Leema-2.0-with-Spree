@@ -5,7 +5,13 @@
     <% else %>
       <%= image_tag("profile-placeholder.jpg", :alt => "Leema Cover Photo", :class => "section-cover-image img-responsive") %>
     <% end %>
-    <h1><%= @user.supplier.store_name %></h1>
+    <h1>
+      <% if @user.supplier? %>
+        <%= @user.store_name %> 
+      <% else %>
+        <%= @user.full_name %>
+      <% end %>
+    </h1>
   </div>
   <div class="container">
     <% if @user == current_user %>
@@ -26,8 +32,10 @@
         <h3><%= @user.full_name %></h3>
         <p class="text-muted"><i class="fa fa-map-marker"></i>  <%= @user.city %>, <%= @user.state %></p>
         <p class="text-muted"><i class="fa fa-clock-o"></i> Joined <%= @user.created_at.strftime('%B %Y') %></p>
-        <p class="text-muted"><%= @user.supplier.products.count %> Products Listed</p>
-        <a href="#" class="btn btn-favorite"> Favorite</a>
+        <% if @user.supplier? %>
+          <p class="text-muted"><%= @supplier.products.count %> Products Listed</p>
+          <a href="#" class="btn btn-favorite"> Favorite</a>
+        <% end %>
       </div>
 
       <div id="profile-about" class="col-sm-8">
