@@ -45,30 +45,35 @@
     </div><!-- close .row -->
   </div><!-- close .container -->
 
-  <div class="container products">
+  <% if @user.supplier? %>
+  <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <% if @user.supplier? %>
-          <div class="page-header">
-            <h3>Products</h3>
-          </div>
+        <div class="page-header">
+          <h3>Products</h3>
+        </div>
+        <div id="products" class="row">
           <% @supplier.products.each do |product| %>
-            <div class="col-sm-4 col-xs-12 welcome-product">
+          <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 product-list-item">
             <%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
-              <%= image_tag product.images.first.attachment.url(:large), :class => 'img-responsive center-block' %>
+            <div class="product-card">
+              <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url %>);"></div>
 
-              <div class="seller-info">
-              <h3 class="seller-name"><%= product.name %></h3>
-              <p class="product-descr"><%= product.description %></p>
-            </div>
+              <div class="product-info">
+                <h3><%= truncate(product.name, :length => 50) %></h3>
+                <p class="product-description"><%= truncate(product.description, :length => 70) %></p>
+                <p class="product-price" itemprop="price"><%= display_price(product) %></p>
+              </div><!-- close .product-info -->
+
+            </div><!-- close .product-card -->
             <% end %>
+          </div><!-- close .product-list-item -->
           <% end %>
-        <% end %>
-
+        </div><!-- close #products.row -->
       </div><!-- close .col-xs-12 -->
     </div><!-- close .row -->
   </div><!-- close .container -->
-
+  <% end %>
 
 
 
