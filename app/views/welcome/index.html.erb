@@ -21,7 +21,7 @@
 
 				<div class="seller-info">
 					<h3 class="seller-name"><%= product.name %></h3>
-					<p class="product-descr"><%= product.description %></p>
+					<p class="product-descr"><%= truncate(product.description, :length => 200) %></p>
 				</div>
 				<% end %>
 			</div>
@@ -92,7 +92,11 @@
 		<div class="row">
 			<div class="col-xs-12 text-center">
 				<h2>Start eating today.</h2>
-				<%= link_to "Get Started", spree_path, class: "btn btn-primary" %>
+				<% if signed_in? %>
+					<%= link_to "Browse Our Products", spree_path, class: "btn btn-primary" %>
+				<% else %>
+					<a href="/register" class="btn btn-primary">Create Your Account</a>
+				<% end %>
 			</div>
 		</div><!-- close .row -->
 	</div><!-- close .container -->
