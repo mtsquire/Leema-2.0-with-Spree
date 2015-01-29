@@ -3,9 +3,6 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @supplier = @user.supplier
-    if @user.supplier?
-      @products = @supplier.products.all
-    end
 
     if @user
       render action: :show
