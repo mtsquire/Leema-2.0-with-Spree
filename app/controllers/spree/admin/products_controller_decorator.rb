@@ -4,6 +4,13 @@ Spree::Admin::ProductsController.class_eval do
 
   create.after :add_product_to_supplier
 
+  def show
+    session[:return_to] ||= request.referer
+    redirect_to( :action => :edit )
+    @product = Spree::Product.find(params[:id])
+    @supplier = @product.suppliers.first
+  end
+
   # Set this up for the search functionality
   def index
     @products = Spree::Product.search(params[:search])
@@ -14,7 +21,7 @@ Spree::Admin::ProductsController.class_eval do
     end
 
     session[:return_to] = request.url
-    # Removing this line fixed the double render error
+    # Commenting out this line fixed the double render error
     # respond_with(@collection)
     
   end

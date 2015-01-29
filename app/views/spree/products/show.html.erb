@@ -2,13 +2,13 @@
   <div id="product-brand" class="row">
     <div class="col-sm-10 col-xs-8">
       <a href="#">
-        <img class="seller-logo" src="http://placehold.it/100x100">
+        <%= image_tag @product.suppliers.first.users.first.gravatar_url, class: "seller-logo" %>
       </a>
         <div class="seller-info">
-          <a href="#">
-            <h3 class="seller-name">Seller</h3>
+          <a href= "/<%= @product.suppliers.first.users.first.id %>">
+            <h3 class="seller-name"><%= @product.suppliers.first.users.first.store_name %></h3>
           </a>
-          <p class="seller-location"><i class="fa fa-map-marker"></i> New York, NY</p>
+          <p class="seller-location"><i class="fa fa-map-marker"></i> <%= @product.suppliers.first.users.first.city %>, <%= @product.suppliers.first.users.first.state %></p>
         </div>
     </div>
     <div class="col-sm-2 col-xs-4">
