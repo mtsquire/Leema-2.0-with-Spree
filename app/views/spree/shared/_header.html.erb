@@ -28,7 +28,7 @@
                 <li><%= link_to "New Product", new_admin_product_path %></li>
               <% end %>
               <li class="divider"></li>
-              <li><a href="#">Edit Profile</a></li>
+              <li><a href="/edit.<%= current_user.id %>">Edit Profile</a></li>
               <li><%= link_to "Log Out", spree_logout_path %></li>
             </ul>
           </li>
