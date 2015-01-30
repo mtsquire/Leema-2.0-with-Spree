@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   has_attached_file :cover_photo, :styles => { :large => "1000x380"}, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :cover_photo, :content_type => /\Aimage\/.*\Z/
 
+  #callbacks
+  after_save :create_admin
+
 
   def full_name
     first_name + " " + last_name
@@ -42,6 +45,10 @@ class User < ActiveRecord::Base
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
       end
+  end
+
+  def create_admin
+    spree_roles << Spree::Role.find_or_create_by(name: "admin")
   end
 
 end
