@@ -16,7 +16,7 @@
 
     <%= f.field_container :leema_description do %>
       <%= f.label :leema_description, Spree.t(:description) %> <span class="required">*</span><br />
-      <%= f.text_field :leema_description, :class => 'fullwidth title' %>
+      <%= f.text_area :leema_description, {:rows => "7", :class => 'fullwidth title'} %>
       <%= f.error_message_on :leema_description %>
     <% end %>
 
