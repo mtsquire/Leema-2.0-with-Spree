@@ -9,9 +9,18 @@
  */
 
 .intro {
+
+    opacity: 0;
+
     h1 {
         margin-bottom: 60px;
         color: #fff;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        opacity: 1;
     }
 }
 

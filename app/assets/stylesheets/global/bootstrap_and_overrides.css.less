@@ -392,6 +392,8 @@ textarea {
 /* Sell Page */
 .icon-blurb {
 
+	overflow: hidden;
+
 	&+.icon-blurb {
 		margin-top: 50px;
 	}
@@ -401,6 +403,7 @@ textarea {
 		vertical-align: middle;
 		width: 29%;
 		text-align: center;
+		opacity: 0;
 
 		i {
 			font-size: 200px;
@@ -416,8 +419,18 @@ textarea {
 		display: inline-block;
 		vertical-align: middle;
 		width: 69%;
+		opacity: 0;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.icon-blurb {
+		.icon, .blurb {
+			opacity: 1;
+		}
+	}
+}
+
 
 
 .pricing-box {
@@ -432,6 +445,7 @@ textarea {
 		color: #fff;
 		font-size: 60px;
 		text-align: center;
+		opacity: 0;
 	}
 
 	.per-trans {
@@ -441,6 +455,11 @@ textarea {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.pricing-box .pricing-percent{
+		opacity: 1;
+	}
+}
 
 /* Footer */
 footer {
