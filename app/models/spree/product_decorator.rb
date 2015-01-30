@@ -18,7 +18,9 @@ Spree::Product.class_eval do
 
     # save the w,h of the original image (from which others can be calculated)
     # we need to look at the write-queue for images which have not been saved yet
-    after_post_process :find_dimensions
+
+    # BHay: Commented this because not sure that we need to calculate original image?
+    # after_post_process :find_dimensions
 
     #used by admin products autocomplete
     def mini_url

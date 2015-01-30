@@ -57,8 +57,13 @@
           <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 product-list-item">
             <%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
             <div class="product-card">
-              <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url %>);"></div>
-
+              <% if product.photo_file_name? %>
+                <div class="product-image background-image" style="background-image: url(<%= image_url product.photo.url %>);"></div>
+              <% elsif image_url product.images.first.attachment_file_name? %>
+                <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url %>);"></div>
+              <% else %>
+                <div class="product-image background-image" style="background-image: url(<%= image_tag("profile-placeholder.jpg")%>"></div>
+              <% end %>
               <div class="product-info">
                 <h3><%= truncate(product.name, :length => 50) %></h3>
                 <p class="product-description"><%= truncate(product.description, :length => 70) %></p>

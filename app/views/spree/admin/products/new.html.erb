@@ -14,6 +14,18 @@
       <%= f.error_message_on :name %>
     <% end %>
 
+    <%= f.field_container :leema_description do %>
+      <%= f.label :leema_description, Spree.t(:description) %> <span class="required">*</span><br />
+      <%= f.text_field :leema_description, :class => 'fullwidth title' %>
+      <%= f.error_message_on :leema_description %>
+    <% end %>
+
+    <%= f.field_container :photo do %>
+      <%= f.label :photo, Spree.t(:photo) %> <span class="required">*</span><br />
+      <%= f.file_field :photo %>
+      <%= f.error_message_on :photo %>
+    <% end %>
+
     <div data-hook="new_product_attrs" class="row">
       <% unless @product.has_variants? %>
         <div data-hook="new_product_sku" class="alpha col-sm-3">
