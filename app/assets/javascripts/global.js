@@ -16,18 +16,6 @@ var getViewport = function() {
     return [viewPortWidth, viewPortHeight];
 }
 
-function absCenterVertical() {
-    $(".abs-center").each(function() {
-        var a = $(this).outerHeight() / -2;
-        $(this).css("margin-top", a)
-    })
-}
-function absTopThirdVertical() {
-    $(".abs-topthird").each(function() {
-        var a = $("#menu").outerHeight(), b = Math.max($(".masthead").outerHeight() / 3.5, a + 130);
-        $(this).css("margin-top", b)
-    })
-}
 function getInternetExplorerVersion() {
     var a = -1;
     if ("Microsoft Internet Explorer" == navigator.appName) {
