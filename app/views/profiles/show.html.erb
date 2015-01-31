@@ -39,7 +39,7 @@
       </div>
 
       <div id="profile-about" class="col-sm-8">
-        <div class="about-user"><p class="lead"><%= @user.about %></p></div>
+        <div class="about-user"><%= simple_format(@user.about, class: 'lead') %></div>
       </div>
 
     </div><!-- close .row -->
