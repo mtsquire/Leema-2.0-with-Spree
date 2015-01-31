@@ -13,20 +13,35 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="/<%= current_user.id %>"><%= image_tag current_user.gravatar_url, class: 'gravatar' %> <%= current_user.first_name %></a>
-          </li>
-          <% if current_user.has_spree_role?("admin") %>
-            <li><%= link_to "My Store", admin_path %></li>
-          <% end %>
+
+
+       <ul class="nav navbar-nav navbar-right">
+        <% if signed_in? %>
           <li><%= link_to "Browse", root_path %></li>
-          <% if current_user.has_spree_role?("admin") %>
-            <li><%= link_to "New Product", new_admin_product_path %></li>
-          <% end %>
-          
-          <li><%= link_to "Log Out", spree_logout_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= image_tag current_user.gravatar_url, class: 'gravatar' %><%= current_user.first_name %> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/<%= current_user.id %>">Profile</a></li>
+              <% if current_user.has_spree_role?("admin") %>
+                <li><%= link_to "My Store", admin_path %></li>
+              <% end %>
+              <% if current_user.has_spree_role?("admin") %>
+                <li><%= link_to "New Product", new_admin_product_path %></li>
+              <% end %>
+              <li class="divider"></li>
+              <li><a href="/edit.<%= current_user.id %>">Edit Profile</a></li>
+              <li><%= link_to "Log Out", spree_logout_path %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li id="link-to-cart" data-hook><%= link_to_cart %></li>
+          <li><%= link_to "Log In", spree_login_path %></a></li>
+          <li><%= link_to "Register", spree_signup_path %></li>
+        <% end %>
       </ul>
+
+
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
