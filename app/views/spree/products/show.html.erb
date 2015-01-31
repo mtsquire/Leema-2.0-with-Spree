@@ -54,7 +54,7 @@
           <div id="product-description" data-hook="product_description">
 
             <div itemprop="description" data-hook="description">
-              <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+              <%= @product.leema_description %>
             </div>
 
             <div id="cart-form" data-hook="cart_form">
