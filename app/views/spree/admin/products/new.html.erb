@@ -20,11 +20,6 @@
       <%= f.error_message_on :leema_description %>
     <% end %>
 
-    <%= f.field_container :photo do %>
-      <%= f.label :photo, Spree.t(:photo) %> <span class="required">*</span><br />
-      <%= f.file_field :photo %>
-      <%= f.error_message_on :photo %>
-    <% end %>
 
     <div data-hook="new_product_attrs" class="row">
       <% unless @product.has_variants? %>
