@@ -31,7 +31,7 @@ function doneResizing() {
 var widthIsWide = !1;
 $(document).ready(function() {
     // define viewport vairables
-    var viewPortWidth = getViewport()[0],
+        viewPortWidth = getViewport()[0],
         viewPortHeight = getViewport()[1],
         widthIsWide = (viewPortWidth > 768),
         IEVersion = getInternetExplorerVersion();
