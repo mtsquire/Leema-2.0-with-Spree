@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
   def link_to_cart(text = nil)
     return "" if current_spree_page?(spree.cart_path)
 
