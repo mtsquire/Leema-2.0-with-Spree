@@ -15,8 +15,8 @@
 /log/*.log
 /tmp
 
-public/spree/products/
-
 public/system/users/cover_photos/000/000/001/large/st-coverphoto.jpg
 
 public/system/users/cover_photos/000/000/001/original/st-coverphoto.jpg
+
+public/spree/products/
