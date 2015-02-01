@@ -151,10 +151,16 @@ $(document).ready(function() {
         // fire parallax functions on scroll through requestAnimationFrame if not oldIE
     if ( !($('html').hasClass('lt-ie9')) ) {
         window.addEventListener('scroll', function(){
-            requestAnimationFrame(parallaxBackground)
-            requestAnimationFrame(iconBlurbLeft)
-            requestAnimationFrame(iconBlurbRight)
-            requestAnimationFrame(pricingPercent)
+            if ($('#reindeer').length > 0){
+                requestAnimationFrame(parallaxBackground)
+            }
+            if ($('.icon-blurb').length > 0){
+                requestAnimationFrame(iconBlurbLeft)
+                requestAnimationFrame(iconBlurbRight)
+            }
+            if ($('.pricing-box').length > 0){
+                requestAnimationFrame(pricingPercent)
+            }
         }, false)
     }
 
