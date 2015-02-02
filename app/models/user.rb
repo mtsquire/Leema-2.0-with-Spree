@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  
+
   has_many :ratings
   has_many :comments, dependent: :destroy
   has_many :products, class_name: Spree::Product.to_s, dependent: :destroy
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>", :mini => "20x20>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :cover_photo, :styles => { :large => "1900x665"}, :default_url => "/images/:style/missing.png"
+  has_attached_file :cover_photo, :styles => { :large => "1900"}, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :cover_photo, :content_type => /\Aimage\/.*\Z/
 
   #callbacks
