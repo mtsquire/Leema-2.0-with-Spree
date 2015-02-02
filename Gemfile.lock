@@ -32,7 +32,6 @@ GIT
   remote: git://github.com/spree-contrib/spree_mail_settings.git
   revision: 44a635e675f448a4b4097b777c8032abdcb159aa
   branch: 2-3-stable
-
   specs:
     spree_mail_settings (2.2.0)
       spree_backend (~> 2.3.0)
