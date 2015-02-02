@@ -430,11 +430,10 @@ textarea {
 	}
 
 	.icon {
-		display: inline-block;
-		vertical-align: middle;
-		width: 29%;
+		width: 30%;
 		text-align: center;
 		opacity: 0;
+		float: left;
 
 		i {
 			font-size: 200px;
@@ -447,10 +446,22 @@ textarea {
 	}
 
 	.blurb {
-		display: inline-block;
-		vertical-align: middle;
-		width: 69%;
+		width: 70%;
 		opacity: 0;
+		float: left;
+		padding: 30px 0;
+	}
+}
+
+.icon-blurb:nth-of-type(even) .icon {
+	float: right;
+}
+
+@media screen and (max-width: 990px) {
+	.icon-blurb {
+		.blurb {
+			padding: 20px 0 0 10px;
+		}
 	}
 }
 
@@ -458,6 +469,10 @@ textarea {
 	.icon-blurb {
 		.icon, .blurb {
 			opacity: 1;
+			width: 100%;
+			display: block;
+			padding: 0 30px;
+			float: none;
 		}
 	}
 }
