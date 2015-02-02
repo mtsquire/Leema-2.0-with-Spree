@@ -89,5 +89,4 @@ Rails.application.configure do
     path: "/:class/:attachment/:id_partition/:style/:filename"
   }
 
-  config.action_mailer.default_url_options = { host: 'leema.herokuapp.com' }
 end
