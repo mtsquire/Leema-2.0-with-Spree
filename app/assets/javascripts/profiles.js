@@ -94,12 +94,16 @@ $(document).ready(function() {
 
 			parallaxBackground();
 
+			// fire parallax functions on scroll through requestAnimationFrame if not oldIE
+			window.addEventListener('scroll', function(){
+				requestAnimationFrame(parallaxBackground)
+			}, false)
+
 		} else {
 			parallaxBackground = function(){}
 		}
 
 	} else {
-		navFix = function(){}
 		parallaxBackground = function(){}
 	}
 
