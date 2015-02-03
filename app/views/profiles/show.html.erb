@@ -43,7 +43,11 @@
       </div>
 
       <div id="profile-about" class="col-sm-8">
-        <div class="about-user"><%= simple_format(@user.about, class: 'lead') %></div>
+        <% if @user.about? %>
+          <div class="about-user"><%= simple_format(@user.about, class: 'lead') %></div>
+        <% else %>
+          <p class="lead">Say something about yourself...<%= link_to "add your bio", edit_path(@user) %>!</p>
+        <% end %>
       </div>
 
     </div><!-- close .row -->
