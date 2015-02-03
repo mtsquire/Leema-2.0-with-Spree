@@ -3,7 +3,7 @@
     <div class="clearfix">
       <h2>Edit Profile</h2>
       <div class="pull-right">
-        <%= link_to "Back", :back %>
+        <%= link_to "Back", :back, :class => "btn btn-primary" %>
       </div>
     </div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -50,7 +50,7 @@
           <%= f.file_field :cover_photo %>
           <p class="help-block">Brandable image that appears at the top of your profile page. Recommended size: 1900px x 665px</p>
         </div>
-        
+
         <% if @user.supplier? %>
           <div class="form-group">
             <%= f.label :store_logo %>
