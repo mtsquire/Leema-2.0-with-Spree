@@ -291,7 +291,7 @@
         .row + .row {
             padding:0px;
         }
-    }  
+    }
 }
 section {
     h2 {
@@ -331,5 +331,13 @@ section {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+    }
+}
+
+#get-started {
+
+    i {
+        font-size: 100px;
+        color: #3a89ff;
     }
 }
