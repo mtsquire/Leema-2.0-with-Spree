@@ -80,9 +80,29 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 text-center">
-				<h2>Start eating today.</h2>
+				<h2>How It Works</h2>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="circle">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+						<h4>Shop our products</h4>
+					</div><!-- close .col-sm-4 -->
+					<div class="col-sm-4">
+						<div class="circle">
+							<i class="fa fa-money"></i>
+						</div>
+						<h4>Make your purchase</h4>
+					</div><!-- close .col-sm-4 -->
+					<div class="col-sm-4">
+						<div class="circle">
+							<i class="fa fa-smile-o"></i>
+						</div>
+						<h4>Enjoy Deliciousness</h4>
+					</div><!-- close .col-sm-4 -->
+				</div><!-- close .row -->
 				<% if signed_in? %>
-					<%= link_to "Browse Our Products", spree_path, class: "btn btn-primary" %>
+					<%= link_to "Start Shopping", spree_path, class: "btn btn-primary" %>
 				<% else %>
 					<a href="/register" class="btn btn-primary">Create Your Account</a>
 				<% end %>
