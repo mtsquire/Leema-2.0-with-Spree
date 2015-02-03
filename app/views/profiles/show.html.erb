@@ -71,7 +71,7 @@
               <div class="product-info">
                 <h3><%= truncate(product.name, :length => 50) %></h3>
                 <p class="product-description"><%= truncate(product.leema_description, :length => 70) %></p>
-                <p class="product-price" itemprop="price"><%= product.price %></p>
+                <p class="product-price" itemprop="price"><%= product.display_price %></p>
               </div><!-- close .product-info -->
 
             </div><!-- close .product-card -->
