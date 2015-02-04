@@ -23,21 +23,21 @@
 
     <div data-hook="new_product_attrs" class="row">
       <% unless @product.has_variants? %>
-        <div data-hook="new_product_sku" class="alpha col-sm-3">
+        <!-- <div data-hook="new_product_sku" class="alpha col-sm-3">
           <%= f.field_container :sku do %>
             <%= f.label :sku, Spree.t(:sku) %><br />
             <%= f.text_field :sku, :size => 16, :class => 'fullwidth' %>
             <%= f.error_message_on :sku %>
           <% end %>
-        </div>
+        </div> -->
       <% end %>
-
-      <div data-hook="new_product_prototype" class="col-sm-3">
+      <!--removed prototype -->
+      <!-- <div data-hook="new_product_prototype" class="col-sm-3">
         <%= f.field_container :prototype do %>
           <%= f.label :prototype_id, Spree.t(:prototype) %><br />
           <%= f.collection_select :prototype_id, Spree::Prototype.all, :id, :name, {:include_blank => true}, {:class => 'select2 fullwidth'} %>
         <% end %>
-      </div>
+      </div> -->
 
       <div data-hook="new_product_price" class="col-sm-3">
         <%= f.field_container :price do %>

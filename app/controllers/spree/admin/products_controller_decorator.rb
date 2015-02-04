@@ -13,6 +13,8 @@ Spree::Admin::ProductsController.class_eval do
 
   # Set this up for the search functionality
   def index
+    @user = spree_current_user
+    @supplier = @user.supplier
     @products = Spree::Product.search(params[:search])
 
     respond_to do |format|
