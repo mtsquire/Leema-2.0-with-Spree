@@ -6,10 +6,10 @@ Spree::BaseHelper.module_eval do
     css_class = nil
 
     if current_order.nil? or current_order.item_count.zero?
-      text = "<i class='fa fa-shopping-cart'></i> #{text}: (#{Spree.t('empty')})".html_safe
+      text = "<i class='fa fa-shopping-cart'></i> (#{Spree.t('empty')})".html_safe
       css_class = 'empty'
     else
-      text = "<i class='fa fa-shopping-cart'></i> #{text}: (#{current_order.item_count})  <span class='amount'>#{current_order.display_total.to_html}</span>".html_safe
+      text = "<i class='fa fa-shopping-cart'></i> (#{current_order.item_count})".html_safe
       css_class = 'full'
     end
 
