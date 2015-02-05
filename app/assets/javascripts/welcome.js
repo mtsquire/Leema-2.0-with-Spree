@@ -148,8 +148,9 @@ $(document).ready(function() {
     } else {
         parallaxBackground = function(){}
     }
-        // fire parallax functions on scroll through requestAnimationFrame if not oldIE
-    if ( !($('html').hasClass('lt-ie9')) ) {
+
+    // fire parallax functions on scroll through requestAnimationFrame if not oldIE
+    if ( !($('html').hasClass('lt-ie9')) && widthIsWide) {
         window.addEventListener('scroll', function(){
             if ($('#reindeer').length > 0){
                 requestAnimationFrame(parallaxBackground)
