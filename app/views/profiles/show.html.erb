@@ -62,29 +62,33 @@
         <div class="page-header">
           <h3><%= @user.first_name %>'s Products</h3>
         </div>
-        <div id="products" class="row">
-          <% @supplier.products.each do |product| %>
-          <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 product-list-item">
-            <%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
-            <div class="product-card">
-              <% if product.photo_file_name? %>
-                <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url(:large) %>);"></div>
-              <% elsif image_url product.images.first.attachment_file_name? %>
-                <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url(:large) %>);"></div>
-              <% else %>
-                <div class="product-image background-image" style="background-image: url(<%= image_tag("profile-placeholder.jpg")%>"></div>
-              <% end %>
-              <div class="product-info">
-                <h3><%= truncate(product.name, :length => 50) %></h3>
-                <p class="product-description"><%= truncate(product.leema_description, :length => 70) %></p>
-                <p class="product-price" itemprop="price"><%= product.display_price %></p>
-              </div><!-- close .product-info -->
+        <% if @supplier.products? %>
+          <div id="products" class="row">
+            <% @supplier.products.each do |product| %>
+            <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 product-list-item">
+              <%= link_to 'store/products/' + product.id.to_s, :class => 'product-link', :itemprop => "name", :title => product.name do %>
+              <div class="product-card">
+                <% if product.photo_file_name? %>
+                  <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url(:large) %>);"></div>
+                <% elsif image_url product.images.first.attachment_file_name? %>
+                  <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url(:large) %>);"></div>
+                <% else %>
+                  <div class="product-image background-image" style="background-image: url(<%= image_tag("profile-placeholder.jpg")%>"></div>
+                <% end %>
+                <div class="product-info">
+                  <h3><%= truncate(product.name, :length => 50) %></h3>
+                  <p class="product-description"><%= truncate(product.leema_description, :length => 70) %></p>
+                  <p class="product-price" itemprop="price"><%= product.display_price %></p>
+                </div><!-- close .product-info -->
 
-            </div><!-- close .product-card -->
+              </div><!-- close .product-card -->
+              <% end %>
+            </div><!-- close .product-list-item -->
             <% end %>
-          </div><!-- close .product-list-item -->
-          <% end %>
-        </div><!-- close #products.row -->
+          </div><!-- close #products.row -->
+        <% else %>
+          <p>No products added yet.</p>
+        <% end %>
       </div><!-- close .col-xs-12 -->
     </div><!-- close .row -->
   </div><!-- close .container -->
