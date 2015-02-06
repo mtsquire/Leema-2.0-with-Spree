@@ -10,13 +10,26 @@
 <div data-hook="supplier_details_wrapper" class="alpha six columns">
   <fieldset class="no-border-bottom">
     <legend><%= Spree.t('supplier_details') %></legend>
-    <%= form.field_container :name do %>
-      <%= form.label :name, Spree::Supplier.human_attribute_name(:name) %>:<br />
-      <%= form.text_field :name, :class => 'fullwidth title', :value => spree_current_user.full_name %>
-    <% end %>
-    <%= form.field_container :email do %>
-      <%= form.label :email, Spree::Supplier.human_attribute_name(:email) %>:<br />
-      <%= form.email_field :email, :class => 'fullwidth text', :value => spree_current_user.email %>
+    <!-- auto populate name and email if user is a new supplier -->
+    <% if spree_current_user.supplier? == false %>
+      <%= form.field_container :name do %>
+        <%= form.label :name, Spree::Supplier.human_attribute_name(:name) %>:<br />
+        <%= form.text_field :name, :class => 'fullwidth title', :value => spree_current_user.full_name %>
+      <% end %>
+      <%= form.field_container :email do %>
+        <%= form.label :email, Spree::Supplier.human_attribute_name(:email) %>:<br />
+        <%= form.email_field :email, :class => 'fullwidth text', :value => spree_current_user.email %>
+      <% end %>
+    <!-- when editing or viewing another supplier dont auto populate name/email -->
+    <% else %>
+      <%= form.field_container :name do %>
+        <%= form.label :name, Spree::Supplier.human_attribute_name(:name) %>:<br />
+        <%= form.text_field :name, :class => 'fullwidth title' %>
+      <% end %>
+      <%= form.field_container :email do %>
+        <%= form.label :email, Spree::Supplier.human_attribute_name(:email) %>:<br />
+        <%= form.email_field :email, :class => 'fullwidth text' %>
+      <% end %>
     <% end %>
     <%= form.field_container :url do %>
       <%= form.label :url, Spree::Supplier.human_attribute_name(:url) %>:<br />
