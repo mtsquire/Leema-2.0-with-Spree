@@ -16,22 +16,22 @@
   <div class="bottom">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4 col-xs-12 copyright">
-          <a href="/"><%= image_tag "footer-logo-horizontal.png", class: 'img-responsive' %></a>
+        <div class="col-md-4 col-sm-12">
+          <a href="/"><%= image_tag "footer-logo-horizontal.png", class: 'img-responsive footer-logo' %></a>
         </div>
-        <div class="col-sm-5 col-xs-12">
+        <div class="col-md-5 col-sm-6 col-xs-12">
           <div class="row">
             <div class="col-xs-12">
               <h5>Need Help?</h5>
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-6">
               <ul class="list-unstyled footer-links">
                 <li><a href="#">Guidelines</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="http://blog.leema.co" target="_blank">Blog</a></li>
               </ul>
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-6">
               <ul class="list-unstyled footer-links">
                 <li><a href="mailto:leemaeats@gmail.com?subject=Yo+Leema%21&body=Tell+us+what%27s+on+your+mind">Email Us A Question</a></li>
                 <li><a href="mailto:leemaeats@gmail.com?subject=Feedback+Yo%21&body=Tell+us+what%27s+on+your+mind">Give Us Feedback</a></li>
@@ -39,13 +39,16 @@
             </div>
           </div><!-- close .row -->
         </div>
-        <div class="col-sm-3 col-xs-12">
+        <div class="col-md-3 col-sm-6 col-xs-12 newsletter">
           <h5>Treat Your Inbox</h5>
           <!-- Begin MailChimp Signup Form -->
           <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
           <style type="text/css">
             /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
                We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+               #mc_embed_signup form {
+                padding: 10px 0;
+               }
                #mc_embed_signup input.email{
                   margin: 0px;
                   padding: 6px 12px;
@@ -77,11 +80,11 @@
   <div class="very-bottom">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 become-a-seller">
           <a href="/sell/" class="btn btn-primary">Become a Seller</a>
         </div><!-- close .col-sm-6 -->
-        <div class="col-sm-6">
-          <ul class="list-inline footer-links text-right">
+        <div class="col-sm-6 legal">
+          <ul class="list-inline footer-links">
             <li>&copy; Leema <%= Time.now.year %></li>
             <li><a href="#">Terms of Service</a></li>
             <li><a href="#">Privacy Policy</a></li>

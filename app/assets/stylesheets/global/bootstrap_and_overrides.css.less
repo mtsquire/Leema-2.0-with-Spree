@@ -512,6 +512,28 @@ textarea {
 }
 
 /* Footer */
+footer .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+ footer .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  footer .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  footer .container {
+    width: 1170px;
+  }
+}
+
 footer {
 	background: darken(@body-bg, 15%);
 
@@ -600,9 +622,31 @@ footer ul.social li a:hover {
 
 }
 
+.legal {
+	text-align: right;
+}
+
+.become-a-seller .btn {
+	color: #fff;
+}
+
+@media (max-width: 991px) {
+  footer .footer-logo {
+    margin-bottom: 20px;
+  }
+}
+
 @media only screen and (max-width: 767px){
-	.footer-links, .copyright {
+	.newsletter {
+		margin-top: 20px;
+	}
+
+	.become-a-seller, .legal {
 		text-align: center;
+	}
+
+	footer h5 {
+		font-size: 16px;
 	}
 }
 
