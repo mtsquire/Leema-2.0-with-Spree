@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208173908) do
+ActiveRecord::Schema.define(version: 20150208204234) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -338,6 +338,7 @@ ActiveRecord::Schema.define(version: 20150208173908) do
     t.boolean  "considered_risky",                                           default: false
     t.string   "guest_token"
     t.integer  "tenant_id"
+    t.string   "tracking_number"
   end
 
   add_index "spree_orders", ["approver_id"], name: "index_spree_orders_on_approver_id"
