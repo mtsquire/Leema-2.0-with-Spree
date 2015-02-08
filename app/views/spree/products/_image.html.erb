@@ -1,5 +1,5 @@
-<% if defined?(image) && image %>
-  <%= image_tag image.attachment.url(:product), :itemprop => "image" %>
+<% if @product.images.count > 0 %>
+  <%= image_tag @product.images.first.attachment.url(:large), :itemprop => "image", :class => "img-responsive center-block" %>
 <% else %>
-  <%= image_tag("leema-product-placeholder.jpg", :class => 'img-responsive center-block') %>
+  <%= image_tag("leema-product-placeholder.jpg", :class => "img-responsive center-block") %>
 <% end %>
