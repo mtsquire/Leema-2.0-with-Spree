@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   has_attached_file :cover_photo, :styles => { :large => "1900"}, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :cover_photo, :content_type => /\Aimage\/.*\Z/
 
+  has_attached_file :store_logo, :styles => { :default => "80x80>"}, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :store_logo, :content_type => /\Aimage\/.*\Z/
+
   #callbacks
   after_save :create_admin
 

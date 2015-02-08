@@ -1138,6 +1138,10 @@ ActiveRecord::Schema.define(version: 20150208173908) do
     t.datetime "cover_photo_updated_at"
     t.integer  "supplier_id"
     t.string   "store_name"
+    t.string   "store_logo_file_name"
+    t.string   "store_logo_content_type"
+    t.integer  "store_logo_file_size"
+    t.datetime "store_logo_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
