@@ -15,6 +15,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
+        <%= form_tag root_path, :class => "navbar-form navbar-left", :method => "get" do %>
+          <div class="input-group">
+            <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search" %>
+            <span class="input-group-btn">
+              <%= button_tag(type: 'submit', class: 'btn btn-primary', :name => nil) do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+            </span>
+          </div><!-- /input-group -->
+          <% end %>
           <li><%= link_to "Browse", root_path %></li>
           <li id="link-to-cart" data-hook><%= link_to_cart %></li>
           <li class="dropdown">
