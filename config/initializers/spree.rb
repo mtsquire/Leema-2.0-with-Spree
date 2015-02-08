@@ -16,24 +16,24 @@ Spree.config do |config|
           secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
           bucket: ENV['S3_BUCKET_NAME'],
         },
-     
+
         storage:        :s3,
         s3_headers:     { "Cache-Control" => "max-age=31557600" },
         s3_protocol:    "https",
         bucket:         ENV['S3_BUCKET_NAME'],
-     
+
         styles: {
-          mini:     "48x32>",
-          small:    "100x67>",
-          product:  "240x160>",
-          large:    "720x480>"
+          mini:     "48",
+          small:    "100",
+          product:  "240",
+          large:    "720"
         },
-     
+
         path:          ":rails_root/public/spree/products/:id/:style/:basename.:extension",
         default_url:   "/spree/products/:id/:style/:basename.:extension",
         default_style: "product",
       }
- 
+
     attachment_config.each do |key, value|
       Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
     end
