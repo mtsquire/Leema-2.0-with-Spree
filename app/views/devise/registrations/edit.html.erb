@@ -14,6 +14,16 @@
           <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         </div>
 
+        <div class="form-group">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, autocomplete: "off", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, autocomplete: "off", class: 'form-control' %>
+        </div>
+
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
@@ -40,10 +50,12 @@
           <%= f.text_area :about, placeholder: "Tell us about yourself.", class: 'form-control', rows: '4' %>
         </div>
 
-        <div class="form-group">
-          <%= f.label :store_name %>
-          <%= f.text_field :store_name, autocomplete: "off", class: 'form-control' %>
-        </div>
+        <% if @user.supplier? %>
+          <div class="form-group">
+            <%= f.label :store_name %>
+            <%= f.text_field :store_name, autocomplete: "off", class: 'form-control' %>
+          </div>
+        <% end %>
 
         <div class="form-group">
           <%= f.label :cover_photo %>
