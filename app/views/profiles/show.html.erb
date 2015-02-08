@@ -62,7 +62,7 @@
         <div class="page-header">
           <h3><%= @user.first_name %>'s Products</h3>
         </div>
-        <% if @supplier.products? %>
+        <% if @supplier.products.count > 0 %>
           <div id="products" class="row">
             <% @supplier.products.each do |product| %>
             <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 product-list-item">
