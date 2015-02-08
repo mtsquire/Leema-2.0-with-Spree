@@ -30,7 +30,7 @@
         <% if @user.avatar_file_name? %>
           <%= image_tag @user.avatar.url(:medium), class: 'img-thumbnail img-responsive' %>
         <% else %>
-          <%= image_tag @user.gravatar_url, class: 'img-thumbnail img-responsive' %>
+          <%= image_tag "leema-seller-logo.jpg", class: 'img-thumbnail img-responsive' %>
         <% end %>
         </div>
         <h3><%= @user.full_name %></h3>
