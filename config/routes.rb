@@ -1,19 +1,12 @@
   Rails.application.routes.draw do
 
   get 'faq/index'
-
   resources "faq", :controller => :faq, :as => :faq
-
   get 'guidelines/index'
-
   resources "guidelines", :controller => :guidelines, :as => :guidelines
-
   get 'terms_of_use/index'
-
   resources "terms-of-use", :controller => :terms_of_use, :as => :terms_of_use
-
   get 'privacy_policy/index'
-
   resources "privacy-policy", :controller => :privacy_policy, :as => :privacy_policy
 
   # This line mounts Spree's routes at the root of your application.

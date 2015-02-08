@@ -5,6 +5,8 @@
   <%= tab :products, :option_types, :properties, :prototypes, :variants, :product_properties, :taxonomies, :icon => 'th-large' %>
 <% end %>
 
+<%= tab(:promotions, :url => spree.admin_promotions_path, :icon => 'bullhorn') %>
+
 <!-- Begin Leema Admin only nav bar -->
 <% if spree_current_user.leema_admin? == true %> 
   <%= tab :reports, :icon => 'file'  %>

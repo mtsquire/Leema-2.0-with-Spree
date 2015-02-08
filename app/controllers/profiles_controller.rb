@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   layout "profiles"
-  def show
+  def show  
     @user = User.find(params[:id])
     @supplier = @user.supplier
 
