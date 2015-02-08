@@ -22,10 +22,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= image_tag current_user.gravatar_url, class: 'gravatar' %><%= current_user.first_name %> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="/<%= current_user.id %>">Profile</a></li>
-              <% if current_user.has_spree_role?("admin") %>
+              <% if current_user.supplier? %>
                 <li><%= link_to "My Store", admin_path %></li>
-              <% end %>
-              <% if current_user.has_spree_role?("admin") %>
                 <li><%= link_to "New Product", new_admin_product_path %></li>
               <% end %>
               <li class="divider"></li>
