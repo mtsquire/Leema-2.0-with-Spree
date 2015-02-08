@@ -70,7 +70,7 @@
               <div class="product-card">
                 <% if product.photo_file_name? %>
                   <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url(:large) %>);"></div>
-                <% elsif image_url product.images.first.attachment_file_name? %>
+                <% elsif image_url product.images.count > 0 %>
                   <div class="product-image background-image" style="background-image: url(<%= image_url product.images.first.attachment.url(:large) %>);"></div>
                 <% else %>
                   <div class="product-image background-image" style="background-image: url(<%= image_tag("profile-placeholder.jpg")%>"></div>
