@@ -6,6 +6,7 @@
 
 @import 'spree/frontend/variables';
 @import 'font-awesome';
+@import 'flexslider';
 
 /*--------------------------------------*/
 /* Basic styles
@@ -638,7 +639,7 @@ ul#products {
     border: $default_border;
     background-color: $product_background_color;
 
-    img {
+    img.single {
       min-height: 240px;
       width: 100%; /* Fluid images for product */
     }
