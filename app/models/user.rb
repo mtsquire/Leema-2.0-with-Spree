@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :store_name, uniqueness: true
 
   has_many :ratings
   has_many :comments, dependent: :destroy
