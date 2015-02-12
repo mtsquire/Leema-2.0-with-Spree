@@ -715,6 +715,53 @@ ul#products {
   margin-bottom: 20px;
 }
 
+#more-info {
+  margin: 40px 0;
+
+  .nav-tabs > li {
+    margin-bottom: 0px;
+  }
+
+  .nav-tabs > li > a {
+    border: none;
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .nav > li > a:hover, .nav > li > a:focus {
+    background: transparent;
+  }
+
+  .nav-tabs {
+    border-top: $default_border;
+    border-bottom: $default_border;
+
+    li {
+      a {
+        padding: 0px 15px;
+        font-size: 13px;
+        margin: 5px 0;
+      }
+    }
+
+    li.active {
+      a {
+        color: $link_text_color;
+      }
+    }
+
+    li + li {
+      a {
+        border-left: $default_border;
+      }
+    }
+  }
+
+  .tab-pane {
+    padding: 10px 0;
+  }
+
+}
+
 /*--------------------------------------*/
 /* Reviews
 /*--------------------------------------*/
