@@ -33,9 +33,6 @@
                 <%= render :partial => 'image' %>
               </div>
             </div>
-            <div id="thumbnails" data-hook>
-              <%= render :partial => 'thumbnails' %>
-            </div>
           </div>
 
           <div data-hook="product_properties">
@@ -64,7 +61,7 @@
               <%= render :partial => 'cart_form' %>
             </div>
 
-            <div id="custom-order">
+            <!-- <div id="custom-order">
               <a href="#" class="btn btn-info" data-toggle="modal" data-target="#customOrder">Custom Order</a>
               <div class="modal fade" id="customOrder" tabindex="-1" role="dialog" aria-labelledby="customOrder" aria-hidden="true">
                 <div class="modal-dialog">
@@ -96,10 +93,46 @@
                     </div>
                   </div>
                 </div>
-              </div><!-- close .modal -->
-            </div><!-- close #custom-order -->
+              </div><
+            </div> -->
 
           </div><!-- close .produt-description -->
+
+          <div id="more-info">
+            <div role="tabpanel">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#about" aria-controls="about" role="tab" data-toggle="tab">About</a></li>
+                <li role="presentation"><a href="#ingredients" aria-controls="ingredients" role="tab" data-toggle="tab">Ingredients</a></li>
+                <li role="presentation"><a href="#shipping-info" aria-controls="shipping-info" role="tab" data-toggle="tab">Shipping Info</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="about">
+                  <% if @user.about? %>
+                    <%= simple_format(@@product.suppliers.first.users.first.about, class: 'lead') %>
+                  <% else %>
+                    <p>This seller has no info.</p>
+                  <% end %>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="ingredients">
+                  <ul>
+                    <li>This</li>
+                    <li>Is</li>
+                    <li>Where</li>
+                    <li>We</li>
+                    <li>List</li>
+                    <li>Ingredients</li>
+                  </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="shipping-info">
+                  <p>This is where we list the user's shipping information.  Prices, places they ship, etc.</p>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- close #more-info -->
 
           <%= render :partial => 'taxons' %>
 
