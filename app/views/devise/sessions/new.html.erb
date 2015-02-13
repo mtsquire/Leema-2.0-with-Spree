@@ -34,13 +34,13 @@
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '778387892228096',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.1' // use version 2.1
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -79,7 +79,7 @@
   }
 </script>
 
-<div class="sign-in-reg">  
+<div class="sign-in-reg">
   <div class="container form">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 col-xs-12">
@@ -103,9 +103,11 @@
           <% if devise_mapping.rememberable? -%>
 
             <div class="checkbox">
-              <label>
-                <%= f.check_box :remember_me %> <%= f.label :remember_me %>
-              </label>
+
+              <%= f.label :remember_me, :class => "checkbox" do %>
+                <%= f.check_box :remember_me %>Remember me
+              <% end %>
+
             </div>
           <% end -%>
 
