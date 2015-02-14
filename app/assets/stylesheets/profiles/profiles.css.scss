@@ -92,3 +92,17 @@
 
 }
 
+@media (max-width: 540px) {
+	.section-cover h1 {
+		font-size: 26px;
+		padding: 10px;
+	}
+}
+
+@media (max-width: 380px) {
+	.section-cover h1 {
+		font-size: 18px;
+		padding: 7px;
+	}
+}
+
