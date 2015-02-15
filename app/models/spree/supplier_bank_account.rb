@@ -1,7 +1,7 @@
 module Spree
   class SupplierBankAccount < ActiveRecord::Base
 
-    attr_accessor :account_number, :routing_number
+    attr_accessor :account_number, :routing_number, :country
 
     belongs_to :supplier
 
