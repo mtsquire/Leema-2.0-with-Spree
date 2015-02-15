@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208204234) do
+ActiveRecord::Schema.define(version: 20150215182955) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -876,6 +876,7 @@ ActiveRecord::Schema.define(version: 20150208204234) do
     t.datetime "updated_at"
     t.integer  "country_iso"
     t.string   "name"
+    t.string   "country"
   end
 
   add_index "spree_supplier_bank_accounts", ["supplier_id"], name: "index_spree_supplier_bank_accounts_on_supplier_id"

@@ -39,12 +39,12 @@ module Spree
           redirect_to completion_route
           #Transfer money to supplier bank account
           @order.products.each do |product|
+            puts "Initiating Stripe transfer"
             transfer = Stripe::Transfer.create(
               #Take 10% for ourselves
               :amount => (product.price * 90).floor,
               :currency => "usd",
-              :recipient => product.suppliers.first.token,
-              :bank_account => product.suppliers.first.token
+              :recipient => product.suppliers.first.token
             )
           end
         else
