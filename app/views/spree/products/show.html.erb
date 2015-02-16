@@ -1,5 +1,25 @@
 <% cache [current_currency, @product] do %>
- 
+ <div id="product-brand" class="row">
+    <div class="col-xs-12">
+      <a href="/<%= @product.suppliers.first.users.first.id %>">
+        <% if @product.suppliers.first.users.first.store_logo != nil %>
+          <%= image_tag @product.suppliers.first.users.first.store_logo(:default), class: "seller-logo" %>
+        <% else %>
+          <%= image_tag "leema-seller-logo.jpg", class: "seller-logo" %>
+        <% end %>
+      </a>
+        <div class="seller-info">
+          <a href= "/<%= @product.suppliers.first.users.first.id %>">
+            <h3 class="seller-name"><%= @product.suppliers.first.users.first.store_name %></h3>
+          </a>
+          <p class="seller-location"><i class="fa fa-map-marker"></i> <%= @product.suppliers.first.users.first.city %>, <%= @product.suppliers.first.users.first.state %></p>
+        </div>
+    </div>
+    <!-- <div class="col-sm-2 col-xs-4">
+        <a href="#" class="btn btn-favorite">
+          Favorite
+        </a>
+   </div> -->
   </div>
   <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
     <% @body_id = 'product-details' %>

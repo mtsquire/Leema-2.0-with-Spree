@@ -41,6 +41,9 @@
   get '/:id', to: 'profiles#show'
 
   root 'welcome#index'
+  
+  #for setting up the stripe webhook
+  post '/hooks/stripe' => 'hooks#stripe'
 
   resources :postmates do
       member do

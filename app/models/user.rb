@@ -31,7 +31,15 @@ class User < ActiveRecord::Base
   end
 
   def leema_admin?
-    email == "brandon.a.hay@gmail.com" || "scottlevy89@gmail.com" || "mtsquire@gmail.com"
+    if email == "brandon.a.hay@gmail.com"
+      true
+    elsif email == "mtsquire@gmail.com"
+      true
+    elsif email == "scottlevy89@gmail.com"
+      true
+    else
+      false
+    end
   end
 
   def gravatar_url
