@@ -10,5 +10,6 @@ class HooksController < ApplicationController
           :currency => "usd",
           :recipient => product.suppliers.first.token
         )
+      end
   end
 end
