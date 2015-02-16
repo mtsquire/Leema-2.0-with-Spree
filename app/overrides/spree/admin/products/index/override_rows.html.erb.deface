@@ -1,6 +1,5 @@
 <!-- replace_contents '[data-hook="admin_products_index_rows"]' -->
 
-<td class="align-center"><%= product.sku rescue '' %></td>
 <td class="align-center"><%= mini_image(product) %></td>
 <td>
   <% if try_spree_current_user && try_spree_current_user.supplier? %>
