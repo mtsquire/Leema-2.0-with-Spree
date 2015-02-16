@@ -8,11 +8,6 @@
         <%= render "spree/reviews/stars", :stars => review.rating, :edit_enabled => true %>
       </div>
 
-      <div class="review_name_field form-group">
-        <%= f.label :name %> <span class="required">*</span><br />
-        <%= f.text_field :name, :maxlength => "255", :class => 'form-control', :size => "50" %>
-      </div>
-
       <div class="review_title_field form-group">
         <%= f.label :title %><br />
         <%= f.text_field :title, :maxlength => "255", :class => 'form-control', :size => "50" %>
