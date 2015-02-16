@@ -38,15 +38,15 @@ module Spree
           flash['order_completed'] = true
           redirect_to completion_route
           #Transfer money to supplier bank account
-          @order.products.each do |product|
-            puts "Initiating Stripe transfer"
-            transfer = Stripe::Transfer.create(
-              #Take 10% for ourselves
-              :amount => (product.price * 90).floor,
-              :currency => "usd",
-              :recipient => product.suppliers.first.token
-            )
-          end
+          # @order.products.each do |product|
+          #   puts "Initiating Stripe transfer"
+          #   transfer = Stripe::Transfer.create(
+          #     #Take 10% for ourselves
+          #     :amount => (product.price * 90).floor,
+          #     :currency => "usd",
+          #     :recipient => product.suppliers.first.token
+          #   )
+          # end
         else
           redirect_to checkout_state_path(@order.state)
           flash.notice = Spree.t(:something_bad_happened)
