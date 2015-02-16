@@ -3,7 +3,7 @@
     <div class="col-xs-12">
       <a href="/<%= @product.suppliers.first.users.first.id %>">
         <% if @product.suppliers.first.users.first.store_logo != nil %>
-          
+          <%= image_tag @product.suppliers.first.users.first.store_logo(:default), class: "seller-logo" %>
         <% else %>
           <%= image_tag "leema-seller-logo.jpg", class: "seller-logo" %>
         <% end %>
