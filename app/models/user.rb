@@ -61,13 +61,13 @@ class User < ActiveRecord::Base
     spree_roles << Spree::Role.find_or_create_by(name: "admin")
   end
 
-  private
-    def create_permalink
-      if store_name
-        self.permalink = store_name.downcase.gsub(" ","-")
-      elsif username
-        self.permalink = username.downcase.gsub(" ", "-")
-      end
+  
+  def create_permalink
+    if store_name
+      self.permalink = store_name.downcase.gsub(" ","-")
+    elsif username
+      self.permalink = username.downcase.gsub(" ", "-")
     end
+  end
 
 end
