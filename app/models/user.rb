@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :username, presence: true, uniqueness: true
+  validates_uniqueness_of :store_name, :on => :update
 
   has_many :ratings
   has_many :comments, dependent: :destroy
@@ -21,13 +23,17 @@ class User < ActiveRecord::Base
 
   has_attached_file :store_logo, :styles => { :default => "80x80>"}, :default_url => "/assets/leema-seller-logo.jpg"
   validates_attachment_content_type :store_logo, :content_type => /\Aimage\/.*\Z/
-
-  #callbacks
+  
+  before_save :create_permalink
+  #automatically create new users as admins so they can become suppliers
   after_save :create_admin
-
 
   def full_name
     first_name + " " + last_name
+  end
+
+  def to_param
+    permalink
   end
 
   def leema_admin?
@@ -42,13 +48,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def gravatar_url
-      stripped_email = email.strip
-      downcased_email = stripped_email.downcase
-      hash = Digest::MD5.hexdigest(downcased_email)
-      "http://gravatar.com/avatar/#{hash}"
-  end
-
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider = auth.provider
@@ -60,6 +59,15 @@ class User < ActiveRecord::Base
 
   def create_admin
     spree_roles << Spree::Role.find_or_create_by(name: "admin")
+  end
+
+  
+  def create_permalink
+    if store_name
+      self.permalink = store_name.downcase.gsub(" ","-")
+    elsif username
+      self.permalink = username.downcase.gsub(" ", "-")
+    end
   end
 
 end

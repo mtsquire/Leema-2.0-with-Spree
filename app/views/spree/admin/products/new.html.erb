@@ -20,6 +20,12 @@
       <%= f.error_message_on :leema_description %>
     <% end %>
 
+    <%= f.field_container :ingredients do %>
+      <%= f.label :ingredients, Spree.t(:ingredients) %> <span class="required">*</span><br />
+      <%= f.text_area :ingredients, {:rows => "7", :class => 'fullwidth title'} %>
+      <%= f.error_message_on :ingredients %>
+    <% end %>
+
 
     <div data-hook="new_product_attrs" class="row">
       <% unless @product.has_variants? %>
@@ -48,11 +54,7 @@
       </div>
 
       <div data-hook="new_product_available_on" class="omega col-sm-3">
-        <%= f.field_container :available_on do %>
-          <%= f.label :available_on, Spree.t(:available_on) %>
-          <%= f.error_message_on :available_on %>
-          <%= f.text_field :available_on, :class => 'datepicker fullwidth' %>
-        <% end %>
+        <%= f.hidden_field :available_on, :value => Date.today %>
       </div>
 
     </div>

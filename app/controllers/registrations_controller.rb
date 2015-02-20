@@ -7,7 +7,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update
     @user = User.find(current_user.id)
-
+    @user.create_permalink
+    puts "user permalink is = #{@user.permalink}"
     successfully_updated = if needs_password?(@user, params)
       @user.update_with_password(devise_parameter_sanitizer.sanitize(:account_update))
     else
@@ -22,7 +23,7 @@ class RegistrationsController < Devise::RegistrationsController
       # Sign in the user bypassing validation in case their password changed
       sign_in @user, :bypass => true
       #Redirect to user profile page after editing
-      redirect_to "/" + current_user.id.to_s
+      redirect_to profile_path(@user.permalink)
     else
       render "edit"
     end
@@ -40,7 +41,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :username, :store_name, :email, :password, :password_confirmation)
   end
 
   def account_update_params
