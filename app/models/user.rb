@@ -5,13 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          # For facebook authentication
          :omniauthable, :omniauth_providers => [:facebook]
-
+  #Validations-------------------------
   validates :first_name, presence: true
   validates :last_name, presence: true
-
-  has_many :ratings
-  has_many :comments, dependent: :destroy
-  has_many :products, class_name: Spree::Product.to_s, dependent: :destroy
+  validates :username, presence: true
+  validates_uniqueness_of :store_name, :on => :update
 
   has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>", :mini => "20x20>" }, :default_url => "/assets/leema-nav-logo.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
@@ -22,9 +20,16 @@ class User < ActiveRecord::Base
   has_attached_file :store_logo, :styles => { :default => "80x80>"}, :default_url => "/assets/leema-seller-logo.jpg"
   validates_attachment_content_type :store_logo, :content_type => /\Aimage\/.*\Z/
 
-  #callbacks
+  #Callbacks--------------------------
+  before_save :create_permalink
   after_save :create_admin
 
+  #User associations (for products and suppliers, for ex.) are defined on the Spree user class model
+
+  #Instance methods-------------------
+  def to_param
+    permalink
+  end
 
   def full_name
     first_name + " " + last_name
@@ -42,13 +47,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def gravatar_url
-      stripped_email = email.strip
-      downcased_email = stripped_email.downcase
-      hash = Digest::MD5.hexdigest(downcased_email)
-      "http://gravatar.com/avatar/#{hash}"
-  end
-
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider = auth.provider
@@ -61,5 +59,14 @@ class User < ActiveRecord::Base
   def create_admin
     spree_roles << Spree::Role.find_or_create_by(name: "admin")
   end
+
+  private
+    def create_permalink
+      if store_name
+        self.permalink = store_name.downcase.gsub(" ","-")
+      elsif username
+        self.permalink = username.downcase.gsub(" ", "-")
+      end
+    end
 
 end
