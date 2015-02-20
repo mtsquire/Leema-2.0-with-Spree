@@ -9,7 +9,7 @@
           <%= devise_error_messages! %>
           <fieldset>
             <legend>
-              <h2>Sign Up</h2>
+              <h2>Register</h2>
             </legend>
             <div class="form-group">
               <div><%= f.label :first_name %>
@@ -19,6 +19,14 @@
               <div><%= f.label :last_name %>
               <%= f.text_field :last_name, class: 'form-control input_wide' %></div>
             </div>
+            <!-- username -->
+             <div class="form-group">
+               <label for"user_store_name">User Name</label>
+               <div class="input-group">
+                 <span class="input-group-addon" id="basic-addon1">www.leema.co/</span>
+                 <%= f.text_field :username, class: 'form-control input_wide' %>
+               </div>
+             </div>
             <div class="form-group">
               <div><%= f.label :email %>
               <%= f.email_field :email, class: 'form-control input_wide' %></div>
@@ -32,7 +40,7 @@
                 <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control input_wide' %></div>
             </div>
           </fieldset>
-          <div><%= f.submit "Sign up", :class => "btn btn-primary" %></div>
+          <div><%= f.submit "Register", :class => "btn btn-primary" %></div>
 
           <div class="text-right">
             Already a member? <%= render "devise/shared/links" %>

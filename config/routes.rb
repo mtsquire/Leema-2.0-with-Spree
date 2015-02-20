@@ -16,10 +16,6 @@
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/store'
 
-  get 'profiles/show'
-
-  get 'ratings/create'
-  get 'ratings/update'
 # Need to adjust this for FB authentication
   devise_for :users, :controllers => { :registrations => "registrations" }
 
